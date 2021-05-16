@@ -1,40 +1,40 @@
 call plug#begin('~/.vim/plugged')
 
-" Common vim settings.
-Plug 'tpope/vim-sensible'
+  " Common vim settings.
+  Plug 'tpope/vim-sensible'
 
-" A Git plugin for Vim.
-Plug 'tpope/vim-fugitive'
+  " A Git plugin for Vim.
+  Plug 'tpope/vim-fugitive'
 
-" A visual Git plugin to see what has changed in each file.
-Plug 'airblade/vim-gitgutter'
+  " A visual Git plugin to see what has changed in each file.
+  Plug 'airblade/vim-gitgutter'
 
-" Syntax highlighting.
-Plug 'scrooloose/syntastic'
+  " Syntax highlighting.
+  Plug 'scrooloose/syntastic'
 
-" Visual plugin to show things such as the Vim mode.
-Plug 'vim-airline/vim-airline'
+  " Visual plugin to show things such as the Vim mode.
+  Plug 'vim-airline/vim-airline'
 
-" File system browser in Vim.
-Plug 'scrooloose/nerdtree'
+  " File system browser in Vim.
+  Plug 'scrooloose/nerdtree'
 
-" Autocomplete, syntax, and language servers all in one.
-Plug 'valloric/youcompleteme' 
+  " Autocomplete, syntax, and language servers all in one.
+  Plug 'valloric/youcompleteme'
 
-" Prettier formatter.
-Plug 'prettier/vim-prettier'
+  " Prettier formatter.
+  Plug 'prettier/vim-prettier'
 
-" Colorful rainbow bracket matching.
-Plug 'luochen1990/rainbow'
+  " Colorful rainbow bracket matching.
+  Plug 'luochen1990/rainbow'
 
-" Monokai color scheme.
-Plug 'crusoexia/vim-monokai'
+  " Monokai color scheme.
+  Plug 'crusoexia/vim-monokai'
 
-" Collection of vim color schemes.
-Plug 'rafi/awesome-vim-colorschemes'
+  " Collection of vim color schemes.
+  Plug 'rafi/awesome-vim-colorschemes'
 
-" A color scheme based on monokai.
-Plug 'tomasr/molokai' 
+  " A color scheme based on monokai.
+  Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -71,4 +71,3 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 " Start NERDTree.  If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-

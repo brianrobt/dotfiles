@@ -1,14 +1,54 @@
 # Source default account configuration
 source "gpg -dq ~/.mutt/gmail.gpg |"
 
+set imap_keepalive = 60
+set imap_passive = no
+set imap_check_subscribed = yes
+set imap_idle = yes
+set mail_check = 60
+
+set sidebar_visible = no
+set sidebar_width = 30
+color sidebar_new brightred default
+# b toggles sidebar visibility
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+
+set ssl_starttls = yes
+set ssl_use_sslv3 = no
+set ssl_use_tlsv1 = no
+set ssl_verify_dates = yes
+set ssl_verify_host = yes
+
+macro index <esc>m "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "mark all messages read"
+
+# What we consider to be a quote.
+set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set to_chars=" +TCF "                     # Drop the "L".
+
+source ~/.mutt/gpg.rc         # Use GPG
+
+# # Last, but not least, get mutt to display its version on startup.
+push <show-version>
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+auto_view text/html                       # eg with links --dump
+
 set ssl_force_tls = yes
 set abort_nosubject = no
 set mail_check = 60
 set timeout = 10
 set sort = "reverse-date-received"
-set signature = "~/.mutt/signature"
+set signature = "~/.config/mutt/signature"
 set copy = no
 set trash = "/tmp/trash"
+set editor = "vim"
+
+set pgp_default_key = 6D5076FC430F16B8BE81BB1518D6D56537D77C28
+set pgp_use_gpg_agent = yes
+set pgp_timeout=1800
+set crypt_autosign = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
 
 # Macros
 macro index gd "<change-folder>$postponed<enter>" "go to drafts"

@@ -178,7 +178,7 @@ set realname = "Brian Thompson"
 # set reverse_name
 # set reverse_realname
 # set use_domain
-set use_from = "brian@hashvault.io"
+set use_from = yes
 # set user_agent
 
 # body

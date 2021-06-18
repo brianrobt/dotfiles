@@ -26,9 +26,9 @@ macro index <esc>m "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "mark all messages r
 set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 set to_chars=" +TCF "                     # Drop the "L".
 
-source ~/.mutt/gpg.rc         # Use GPG
+source ~/.gnupg/gpg.rc         # Use GPG
 
-# # Last, but not least, get mutt to display its version on startup.
+# Last, but not least, get mutt to display its version on startup.
 push <show-version>
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 auto_view text/html                       # eg with links --dump
@@ -38,20 +38,401 @@ set abort_nosubject = no
 set mail_check = 60
 set timeout = 10
 set sort = "reverse-date-received"
-set signature = "~/.config/mutt/signature"
 set copy = no
 set trash = "/tmp/trash"
 set editor = "vim"
 
-set pgp_default_key = 6D5076FC430F16B8BE81BB1518D6D56537D77C28
 set pgp_use_gpg_agent = yes
 set pgp_timeout=1800
 set crypt_autosign = yes
 set crypt_replysign = yes
 set crypt_replysignencrypted = yes
 
-# Macros
+# macros
 macro index gd "<change-folder>$postponed<enter>" "go to drafts"
 macro index gs "<change-folder>$record<enter>" "go to sent"
 macro index gi "<change-folder>$spoolfile<Enter>" "go to inbox"
 macro index gt "<change-folder>$trash<enter>" "go to trash""
+
+# system
+# set alias_file
+set check_new = yes
+# set dotlock_program
+set editor = vim
+# set locale
+# set mail_check
+# set mh_purge
+# set mh_seq_flagged
+# set mh_seq_replied
+# set mh_seq_unseen
+# set query_command
+set shell = /usr/bin/fish
+set tmpdir = /tmp
+set timeout = 60
+# set header_cache
+# set maildir
+# set message_cachedir
+# set spam_separator
+set use_ipv6 = yes
+
+# sendmail
+# set dsn_notify
+# set dsn_return
+# set envelope_from_address
+# set envelope_from
+# set use_envelope_from
+# set sendmail
+# set sendmail_wait
+
+# folder
+# set folder
+# set spoolfile
+# set mbox_type
+# set confirmappend
+# set confirmcreate
+# set delete
+# set maildir_trash
+# set mbox
+# set move
+set keep_flagged = yes
+# set postponed
+# set read_only
+# set save_empty
+# set copy
+# set record
+# set force_name
+set save_address = yes
+set save_name = yes
+# set write_bcc
+
+# menu
+# set arrow_cursor
+# set ascii_chars
+# set braille_friendly
+# set help
+# set mask
+# set menu_context
+# set menu_move_off
+# set menu_scroll
+# set sleep_time
+# set sort_browser
+# set sort_alias
+# set status_on_top
+# set wait_key
+
+# format
+# set alias_format
+# set attach_format
+# set compose_format
+# set date_format
+# set folder_format
+# set index_format
+# set hdr_format
+# set message_format
+# set msg_format
+# set pager_format
+# set status_format
+
+# index
+set mark_old = yes
+# set read_inc
+# set reverse_alias
+# set score
+# set score_threshold_delete
+# set score_threshold_flag
+# set score_threshold_read
+# set sort
+# set status_chars
+# set to_chars
+# set write_inc
+
+# pager
+# set allow_anasi
+# set display_filter
+# set implicit_autoview
+# set markers
+# set pager
+# set pager_context
+# set pager_index_lines
+# set pager_stop
+# set prompt_after
+# set quote_regexp
+# set smart_wrap
+# set smileys
+# set tilde
+# set weed
+# set wrap_search
+set wrapmargin = 72
+
+# header
+# set followup_to
+# set forward_format
+# set forw_format
+set from = "brian@hashvault.io"
+# set gecos_mask
+# set hdrs
+# set hidden_host
+set hostname = "brians-debian"
+set realname = "Brian Thompson"
+# set reply_regexp
+# set reverse_name
+# set reverse_realname
+# set use_domain
+set use_from = "brian@hashvault.io"
+# set user_agent
+
+# body
+# set attribution
+# set content_type
+# set encode_from
+# set forward_quote
+# set forw_quote
+# set indent_string
+# set indent_str
+# set post_indent_string
+# set post_indent_str
+# set sig_dashes
+set signature = "~/.mutt/signature"
+# set text_flowed
+
+# compose
+set abort_nosubject = yes
+# set abort_unmodified
+# set askbcc
+set askcc = yes
+# set autoedit
+# set bounce
+# set bounce_delivered
+# set edit_headers
+# set edit_hdrs
+# set fast_reply
+# set forward_edit
+# set header
+set honor_followup_to = yes
+# set ignore_list_reply_to
+# set include
+# set metoo
+set postpone = yes
+# set recall
+# set reply_self
+# set reply_to
+
+# thread
+# set collapse_unread
+set duplicate_threads = no
+# set hide_limited
+# set hide_missing
+# set hide_thread_subject
+# set hide_top_limited
+# set hide_top_missing
+# set narrow_tree
+# set reply_regexp
+# set sort_aux
+# set strict_threads
+# set thread_received
+# set uncollapse_jump
+
+# attach
+# set attach_sep
+# set attach_split
+# set digest_nocollapse
+# set fcc_attach
+# set forward_decode
+# set include_onlyfirst
+# set mailcap_path
+# set mailcap_sanitize
+# set mime_forward
+# set mime_fwd
+# set mime_forward_decode
+# set mime_forward_rest
+# set pipe_decode
+# set print_decode
+# set thorough_search
+# set rfc2047_parameters
+
+# action
+# set auto_tag
+# set delete_untag
+# set quit
+# set resolve
+# set suspend
+# set pipe_sep
+# set pipe_split
+# set print
+# set print_command
+# set print_cmd
+# set print_split
+# set simple_search
+
+# charset
+# set allow_8bit
+# set charset
+# set config_charset
+# set send_charset
+# set use_8bitmime
+# set use_idn
+
+# crypt
+# set crypt_autoencrypt
+# set pgp_autoencrypt
+# set crypt_autopgp
+# set crypt_autosign
+# set pgp_autosign
+# set crypt_autosmime
+# set crypt_replyencrypt
+# set pgp_replyencrypt
+# set crypt_replysign
+# set pgp_replysign
+# set crypt_replysignecnrypted
+# set pgp_replysignencrypted
+# set crypt_timestamp
+# set crypt_use_gpgme
+# set crypt_verify_sig
+# set pgp_verify_sig
+# set fcc_clear
+# set forward_decrypt
+# set forw_decrypt
+# set smime_is_default
+
+# pgp
+set pgp_check_exit = yes
+# set pgp_entry_format
+# set pgp_good_sign
+# set pgp_ignore_subkeys
+# set pgp_lond_ids
+set pgp_retainable_sigs = yes
+# set pgp_show_unusable
+set pgp_sign_as = "Brian Thompson"
+# set pgp_sort_keys
+# set pgp_strict_enc
+set pgp_timeout = 30
+set pgp_use_gpg_agent = yes
+# set pgp_mime_auto
+# set pgp_auto_decode
+# set pgp_autoinline
+# set pgp_create_traditional
+# set pgp_replyinline
+# set pgp_auto_traditional
+
+# pgp_cmd
+# set pgp_clearsign_command
+# set pgp_decode_command
+# set pgp_decrypt_command
+# set pgp_encrypt_only_command
+# set pgp_encrypt_sign_command
+# set pgp_export_command
+# set pgp_getkeys_command
+# set pgp_list_pubring_command
+# set pgp_list_secring_command
+# set pgp_sign_command
+# set pgp_verify_command
+# set pgp_verify_key_command
+
+# smime
+# set smime_ask_cert_label
+# set smime_decrypt_use_default_key
+# set smime_timeout
+# set smime_encrypt_with
+# set smime_keys
+# set smime_ca_location
+# set smime_certificates
+# set smime_default_key
+# set smime_sign_as
+
+# smime_cmd
+# set smime_decrypt_command
+# set smime_verify_command
+# set smime_verify_opaque_command
+# set smime_sign_command
+# set smime_sign_opaque_command
+# set smime_pk7out_command
+# set smime_get_cert_command
+# set smime_get_signer_cert_command
+# set smime_import_cert_command
+# set smime_get_cert_email_command
+
+# remote
+set connect_timeout = 60
+# set net_inc
+# set preconnect
+# set tunnel
+
+# imap
+# set imap_authenticators
+# set imap_check_subscribed
+# set imap_delim_chars
+# set imap_headers
+# set imap_home_namespace
+# set imap_idle
+# set imap_keepalive
+# set imap_list_subscribed
+# set imap_login
+# set imap_pass
+# set imap_passive
+# set imap_peek
+# set imap_servernoise
+# set imap_user
+
+# pop
+# set pop_auth_try_all
+# set pop_authenticators
+# set pop_checkinterval
+# set pop_delete
+# set pop_host
+# set pop_last
+# set pop_pass
+# set pop_reconnect
+# set pop_user
+
+# ssl
+# set certificate_file
+# set entropy_file
+# set ssl_ca_certificates_file
+# set ssl_client_cert
+# set ssl_force_tls
+# set ssl_min_dh_prime_bits
+# set ssl_starttls
+# set imap_force_ssl
+# set ssl_use_sslv2
+# set ssl_use_sslv3
+# set ssl_use_tlsv1
+# set ssl_usesystemcerts
+
+# misc
+# set beep
+set beep_new = yes
+# set default_hook
+# set ispell
+# set mix_entry_format
+# set mixmaster
+# set sig_on_top
+# set visual
+# set escape
+# set history
+# set meta_key
+
+# new (1.5.15-1.5.19~tip)
+# 1.5.15
+# set assumed_charset
+# set attach_charset
+# set check_mbox_size
+# set crypt_use_pka
+# set history_file
+# set ignore_linear_white_sapce
+# set save_history
+# set smtp_url
+# set wrap
+# 1.5.16
+# set message_cache_clean
+# set smtp_pass
+# 1.5.18
+# set query_format
+# set time_inc
+# 1.5.19
+# set imap_pipeline_depth
+# set ssl_client_cert
+# "tip"/1.5.20(?)
+# set honor_disposition
+# set search_context
+# set ssl_verify_dates
+# set ssl_verify_hostname

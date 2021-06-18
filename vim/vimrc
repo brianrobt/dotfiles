@@ -47,6 +47,6 @@ set autoindent
 " Set backspace for certain characters.
 set backspace=indent,eol,start
 
-" Set textwidth to be 100 and visual ruler to be +1 from that.
+" Set textwidth to be 72 and visual ruler to be +1 from that.
 set textwidth=72
 set cc=+1

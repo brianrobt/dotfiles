@@ -30,6 +30,9 @@ call plug#begin('~/.vim/plugged')
   " A color scheme based on monokai.
   Plug 'tomasr/molokai'
 
+  " Markdown plugin.
+  Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 
 " Enable syntax highlighting.
@@ -50,3 +53,10 @@ set backspace=indent,eol,start
 " Set textwidth to be 72 and visual ruler to be +1 from that.
 set textwidth=72
 set cc=+1
+
+set tabstop=2
+set shiftwidth=2
+
+" Show whitespace chars.
+set list
+set listchars=eol:$,tab:>-,trail:~

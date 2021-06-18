@@ -15,12 +15,6 @@ call plug#begin('~/.vim/plugged')
   " Visual plugin to show things such as the Vim mode.
   Plug 'vim-airline/vim-airline'
 
-  " File system browser in Vim.
-  Plug 'scrooloose/nerdtree'
-
-  " Autocomplete, syntax, and language servers all in one.
-  Plug 'valloric/youcompleteme'
-
   " Prettier formatter.
   Plug 'prettier/vim-prettier'
 
@@ -42,7 +36,7 @@ call plug#end()
 syntax on
 
 " Set the "pyte" color scheme.
-colorscheme pyte
+colorscheme molokai
 
 " Turn on line numbers.
 set number
@@ -54,20 +48,5 @@ set autoindent
 set backspace=indent,eol,start
 
 " Set textwidth to be 100 and visual ruler to be +1 from that.
-set textwidth=100
+set textwidth=72
 set cc=+1
-
-"""""
-" NERDTree settings
-"""""
-
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-
-" Start NERDTree when vim is started without file arguments.
-autocmd StdinReadPre let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
-" Start NERDTree.  If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif

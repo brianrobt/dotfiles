@@ -34,6 +34,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
 
+  " tmux plugin.
+  Plug 'tmux-plugins/vim-tmux'
+
+  Plug 'junegunn/fzf', { 'do': { ->fzf#install() } } 
 call plug#end()
 
 " Enable syntax highlighting.
@@ -59,6 +63,8 @@ set cc=+1
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set smarttab
+set breakindent
 
 " Show whitespace chars.
 set list
@@ -68,8 +74,15 @@ set listchars=eol:$,tab:>-,trail:~
 
 " Disable folding.
 let g:vim_markdown_folding_disabled = 1
-" Disable conceraling.
+" Disable concealing.
 let g:vim_markdown_conceal = 0
-let g:text_concerl = ""
+let g:tex_conceal = ""
 let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+" Fix indentation.
+let g:vim_markdown_new_list_item_indent = 0
+" Follow anchors.
+let g:vim_markdown_follow_anchor = 1
+" Do not automatically insert bullet points.
+let g:vim_markdown_auto_insert_bullets = 0
 

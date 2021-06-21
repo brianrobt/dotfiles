@@ -1,4 +1,3 @@
 " Chromium Vim integration plugin settings
 
 set editor=gvim -f
-set server_port=5353

@@ -49,8 +49,9 @@ colorscheme molokai
 " Turn on line numbers.
 set number
 
-" Enable autoindent.
+" Enable intelligent indentation.
 set autoindent
+set smartindent
 
 " Set backspace for certain characters.
 set backspace=indent,eol,start
@@ -64,7 +65,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
-set breakindent
+" set breakindent
 
 " Show whitespace chars.
 set list

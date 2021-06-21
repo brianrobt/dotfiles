@@ -173,7 +173,7 @@ set from = "brian@hashvault.io"
 # set gecos_mask
 # set hdrs
 # set hidden_host
-set hostname = "brians-debian"
+# set hostname = "brians-debian"
 set realname = "Brian Thompson"
 # set reply_regexp
 # set reverse_name

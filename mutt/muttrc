@@ -40,7 +40,7 @@ set timeout = 10
 set sort = "reverse-date-received"
 set copy = no
 set trash = "/tmp/trash"
-set editor = "vim"
+set editor = "vim -S ~/.mutt/vimrc"
 
 set pgp_use_gpg_agent = yes
 set pgp_timeout=1800
@@ -163,7 +163,6 @@ set smart_wrap = yes
 # set tilde
 # set weed
 # set wrap_search
-set wrap = 80
 set wrapmargin = 80
 
 # header
@@ -423,7 +422,7 @@ set beep_new = yes
 # set ignore_linear_white_sapce
 # set save_history
 # set smtp_url
-# set wrap
+set wrap = 80
 # 1.5.16
 # set message_cache_clean
 # set smtp_pass

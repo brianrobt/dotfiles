@@ -107,9 +107,10 @@ alias ls="exa -al"
 # Uncomment the following if the previous `ls` alias is commented.
 # alias exa="exa --color=auto -alg"
 
-# Exports
+# Environment variables
 export GPG_TTY=$(tty)
 export EDITOR=vim
+export PIHOLE_SKIP_OS_CHECK=true
 
 # Path exports
 export PATH=$PATH:/snap/bin

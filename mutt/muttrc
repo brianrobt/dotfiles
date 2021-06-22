@@ -163,6 +163,7 @@ set smart_wrap = yes
 # set tilde
 # set weed
 # set wrap_search
+set wrap = 80
 set wrapmargin = 80
 
 # header

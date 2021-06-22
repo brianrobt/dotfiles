@@ -95,7 +95,6 @@ auto_view text/html                       # eg with links --dump
 
 set ssl_force_tls = yes
 set abort_nosubject = yes
-set mail_check = 60
 set timeout = 10
 set sort = "reverse-date-received"
 set copy = no
@@ -121,7 +120,7 @@ set check_new = yes
 # set dotlock_program
 set editor = vim
 # set locale
-# set mail_check
+set mail_check = 30
 # set mh_purge
 # set mh_seq_flagged
 # set mh_seq_replied
@@ -186,7 +185,8 @@ set save_name = yes
 # set attach_format
 # set compose_format
 # set date_format
-# set folder_format
+## set folder_format="%2C %t %N %8s %d %f"
+#set folder_format=""
 # set index_format
 # set hdr_format
 # set message_format

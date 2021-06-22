@@ -82,8 +82,8 @@ set use_ipv6 = yes
 # set envelope_from_address
 # set envelope_from
 # set use_envelope_from
-# set sendmail
-# set sendmail_wait
+set sendmail = postfix
+set sendmail_wait = 0
 
 # folder
 # set folder

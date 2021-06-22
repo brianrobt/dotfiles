@@ -89,8 +89,8 @@ set use_ipv6 = yes
 # set folder
 # set spoolfile
 # set mbox_type
-# set confirmappend
-# set confirmcreate
+set confirmappend = no
+set confirmcreate = no
 # set delete
 # set maildir_trash
 # set mbox
@@ -148,7 +148,7 @@ set mark_old = yes
 # set write_inc
 
 # pager
-# set allow_anasi
+# set allow_ansi
 # set display_filter
 # set implicit_autoview
 # set markers
@@ -158,12 +158,12 @@ set mark_old = yes
 # set pager_stop
 # set prompt_after
 # set quote_regexp
-# set smart_wrap
+set smart_wrap = on
 # set smileys
 # set tilde
 # set weed
 # set wrap_search
-set wrapmargin = 72
+set wrapmargin = 80
 
 # header
 # set followup_to
@@ -173,7 +173,7 @@ set from = "brian@hashvault.io"
 # set gecos_mask
 # set hdrs
 # set hidden_host
-# set hostname = "brians-debian"
+set hostname = "brians-debian"
 set realname = "Brian Thompson"
 # set reply_regexp
 # set reverse_name

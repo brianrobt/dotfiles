@@ -163,7 +163,7 @@ set smart_wrap = yes
 # set tilde
 # set weed
 # set wrap_search
-set wrapmargin = 80
+set wrap = 80
 
 # header
 # set followup_to
@@ -422,8 +422,8 @@ set beep_new = yes
 # set ignore_linear_white_sapce
 # set save_history
 # set smtp_url
-set wrap = 80
 # 1.5.16
+# set wrap
 # set message_cache_clean
 # set smtp_pass
 # 1.5.18
@@ -437,3 +437,5 @@ set wrap = 80
 # set search_context
 # set ssl_verify_dates
 # set ssl_verify_hostname
+set ascii_chars = yes
+

@@ -158,7 +158,7 @@ set mark_old = yes
 # set pager_stop
 # set prompt_after
 # set quote_regexp
-set smart_wrap = on
+set smart_wrap = yes
 # set smileys
 # set tilde
 # set weed

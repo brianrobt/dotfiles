@@ -1,11 +1,11 @@
 ### Environment variables
-EDITOR=vim
+#EDITOR=vim
 ## Paths used to initialize the random engine for SSL libary.
 #EDGSOCKET=
 #RANDFILE=
 ## The user's email address.
-EMAIL=bthompson.deb@gmail.com
-HOME=/home/briant
+#EMAIL=bthompson.deb@gmail.com
+#HOME=/home/briant
 ## Full path of the user's spool mailbox.
 #MAIL=
 ## Full path of the user's spool mailbox if MAIL is unset.  Commonly used
@@ -20,7 +20,7 @@ HOME=/home/briant
 ## this being set.
 #PGPPATH=
 ## Default Reply-To address.
-REPLYTO=brian@hashvault.io
+#REPLYTO=brian@hashvault.io
 ## Directory inwhich temporary files are created.  If unset, /tmp is
 ## used.  See also $tmpdir configuration variable.
 #TMPDIR=/tmp
@@ -141,8 +141,8 @@ set use_ipv6 = yes
 # set envelope_from_address
 # set envelope_from
 # set use_envelope_from
-set sendmail = /home/briant/bin/muttsendmail.sh
-set sendmail_wait = 0
+# set sendmail = /home/briant/bin/muttsendmail.sh
+# set sendmail_wait = 0
 
 # folder
 # set folder
@@ -264,7 +264,7 @@ set askcc = yes
 # set autoedit
 # set bounce
 # set bounce_delivered
-# set edit_headers
+set edit_headers = yes
 # set edit_hdrs
 # set fast_reply
 # set forward_edit
@@ -276,7 +276,7 @@ set honor_followup_to = yes
 set postpone = yes
 # set recall
 # set reply_self
-# set reply_to
+set reply_to = yes
 
 # thread
 # set collapse_unread

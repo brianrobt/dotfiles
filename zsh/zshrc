@@ -110,6 +110,7 @@ alias ls="exa -al"
 ## Environment variables
 export GPG_TTY=$(tty)
 export EDITOR=vim
+export DEBEMAIL=brian@hashvault.io
 
 # Path exports
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin

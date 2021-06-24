@@ -111,6 +111,10 @@ alias ls="exa -al"
 export GPG_TTY=$(tty)
 export EDITOR=vim
 export DEBEMAIL=brian@hashvault.io
+export PYBUILD_OPTION_VERSIONED_INTERPRETER="/usr/bin/python3.9"
+export BROWSER=firefox
+export APT_HOOK_INFO_FD=20
 
 # Path exports
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin
+PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:/snap/bin
+export PATH

@@ -1,16 +1,16 @@
+set nocompatible
+filetype off
+
 call plug#begin('~/.vim/plugged')
 
   " Common vim settings.
   Plug 'tpope/vim-sensible'
 
-  " A Git plugin for Vim.
+ " Git support.
   Plug 'tpope/vim-fugitive'
 
   " A visual Git plugin to see what has changed in each file.
   Plug 'airblade/vim-gitgutter'
-
-  " Syntax highlighting.
-  Plug 'scrooloose/syntastic'
 
   " Visual plugin to show things such as the Vim mode.
   Plug 'vim-airline/vim-airline'
@@ -46,7 +46,19 @@ call plug#begin('~/.vim/plugged')
   " File tree navigator.
   Plug 'scrooloose/nerdtree'
 
+  " Syntax checking through external syntax checkers.
+  Plug 'vim-syntastic/syntastic'
+
+  " Mappings to delete, change and add surrounding pairs (parens,
+  " quotes, etc.)
+  Plug 'tpope/vim-surround'
+
+  " Comment keybinds.
+  Plug 'tpope/vim-commentary'
+
 call plug#end()
+
+filetype plugin indent on
 
 " Enable syntax highlighting.
 syntax on
@@ -131,3 +143,18 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Change the default arrows.
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Syntastic settings
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+" vim-commentary settings
+
+autocmd FileType * setlocal commentstring=#\ %s

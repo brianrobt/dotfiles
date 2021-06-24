@@ -61,6 +61,9 @@
 # Source default account configuration
 source "gpg -dq ~/.mutt/gmail.gpg |"
 
+set reflow_space_quotes = no
+set reflow_text = yes
+
 set imap_keepalive = 60
 set imap_passive = no
 set imap_check_subscribed = yes
@@ -115,13 +118,13 @@ macro index gt "<change-folder>$trash<enter>" "go to trash""
 macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
 
 # system
-# set alias_file
+set alias_file = "$HOME/.mutt/aliases"
 set check_new = yes
 # set dotlock_program
 set editor = vim
 # set locale
 set mail_check = 30
-# set mh_purge
+set mh_purge = yes
 # set mh_seq_flagged
 # set mh_seq_replied
 # set mh_seq_unseen
@@ -129,16 +132,16 @@ set mail_check = 30
 set shell = /usr/bin/fish
 set tmpdir = /tmp
 set timeout = 60
-# set header_cache
-# set maildir
+# set header_cache = "~/.mutt/headers/"
+# set maildir = "~/.mutt/messages/"
 # set message_cachedir
 # set spam_separator
-set use_ipv6 = yes
+# set use_ipv6 = yes
 
 # sendmail
 # set dsn_notify
 # set dsn_return
-# set envelope_from_address
+# set envelope_from_address = brian@hashvault.io
 # set envelope_from
 # set use_envelope_from
 # set sendmail = /home/briant/bin/muttsendmail.sh
@@ -150,16 +153,16 @@ set use_ipv6 = yes
 # set mbox_type
 set confirmappend = no
 set confirmcreate = no
-# set delete
+set delete = yes
 # set maildir_trash
 # set mbox
 # set move
 set keep_flagged = yes
-# set postponed
+set postponed = "~/.mutt/postponed/"
 # set read_only
 # set save_empty
 # set copy
-# set record
+set record = "~/.mutt/sent"
 # set force_name
 set save_address = yes
 set save_name = yes
@@ -186,8 +189,8 @@ set save_name = yes
 # set compose_format
 # set date_format
 ## set folder_format="%2C %t %N %8s %d %f"
-#set folder_format=""
-# set index_format
+#set folder_format="%t %N"
+#set index_format = "%Z"
 # set hdr_format
 # set message_format
 # set msg_format
@@ -195,14 +198,14 @@ set save_name = yes
 # set status_format
 
 # index
-set mark_old = yes
+set mark_old = no
 # set read_inc
 # set reverse_alias
 # set score
 # set score_threshold_delete
 # set score_threshold_flag
 # set score_threshold_read
-# set sort
+set sort = date-received
 # set status_chars
 # set to_chars
 # set write_inc
@@ -258,7 +261,7 @@ set signature = "~/.mutt/signature"
 
 # compose
 set abort_nosubject = yes
-# set abort_unmodified
+set abort_unmodified = yes
 # set askbcc
 set askcc = yes
 # set autoedit
@@ -461,7 +464,7 @@ set connect_timeout = 60
 
 # misc
 # set beep
-set beep_new = yes
+# set beep_new = no
 # set default_hook
 # set ispell
 # set mix_entry_format

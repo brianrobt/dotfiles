@@ -133,7 +133,7 @@ export GPG_TTY=$(tty)
 export EDITOR=vim
 export DEBEMAIL="brian@hashvault.io"
 export PYBUILD_OPTION_VERSIONED_INTERPRETER="/usr/bin/python3.9"
-export BROWSER=chromium
+export BROWSER=firefox
 export APT_HOOK_INFO_FD=20
 export PAGER=/usr/bin/less
 

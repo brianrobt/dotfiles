@@ -267,7 +267,7 @@ set askcc = yes
 # set autoedit
 # set bounce
 # set bounce_delivered
-set edit_headers = yes
+set edit_headers = no
 # set edit_hdrs
 # set fast_reply
 # set forward_edit

@@ -35,13 +35,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { ->fzf#install() } } 
 
   " Code completion.
-  Plug 'ycm-core/youcompleteme'
+"  Plug 'ycm-core/youcompleteme'
 
   " File tree navigator.
   Plug 'scrooloose/nerdtree'
 
   " Syntax checking through external syntax checkers.
-  Plug 'vim-syntastic/syntastic'
+"  Plug 'vim-syntastic/syntastic'
 
   " Mappings to delete, change and add surrounding pairs (parens,
   " quotes, etc.)

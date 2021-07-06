@@ -12,7 +12,7 @@
   fileMode = true
   hideDotFiles = false
   ignoreCase = true
-  fsmonitor = true
+#  fsmonitor = true
   eol = lf
   safecrlf = true
   pager = less
@@ -150,12 +150,13 @@
 [push]
   default = current
   followTags = true
-  gpgSign = true
+#  gpgSign = true
 [rebase]
   stat = true
   autoSquash = false
   autoStash = true
 [receive]
+  advertisePushOptions = true
 [remote]
 [remotes]
 [repack]

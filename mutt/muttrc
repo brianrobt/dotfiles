@@ -12,16 +12,21 @@ set imap_user = 'brian@hashvault.io'
 
 # Smtp settings
 set smtp_url = 'smtps://brian@hashvault.io@smtp.gmail.com'
+set smtp_authenticators = "login"
+
+macro index 1 "change-folder> =../debian/inbox/<enter>"
+macro index G "!mbsync -a^M" "Update through mbsync"
+unset move
 
 # Import smtp and imap credentials
 source "gpg -dq ~/.mutt/gmail.gpg |"
 
 # Remote gmail folders
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
-set trash = "+[Gmail]/Trash"
+set folder = "~/.mutt/mailbox/debian"
+set spoolfile = "~/.mutt/mailbox/debian/inbox"
+set postponed = "~/.mutt/mailbox/debian/drafts"
+set record = ""
+set trash = "+/trash"
 #set mbox="+mbox"
 
 ### Identity
@@ -62,7 +67,8 @@ unset reflow_space_quotes
 set imap_keepalive = 60
 unset imap_passive
 set imap_check_subscribed
-set mail_check = 30
+set mail_check = 15
+set timeout = 15
 
 set sidebar_visible = no
 set sidebar_width = 30
@@ -92,7 +98,6 @@ auto_view text/html                       # eg with links --dump
 
 set ssl_force_tls = yes
 set abort_nosubject = yes
-set timeout = 10
 set sort = "reverse-date-received"
 set copy = no
 set editor = "vim -S ~/.mutt/vimrc"

@@ -23,7 +23,7 @@
 [alias]
   last = cat-file commit HEAD
   addall = add -A
-  shortcommit = commit -m
+  cm = commit -m
 [am]
 [apply]
 [blame]
@@ -181,14 +181,8 @@
 [url]
 [user]
   name = Brian Thompson
-  email = brian@hashvault.io
-  signingkey = 0x84DF804D67D19AA2
-[author]
-  name = Brian Thompson
-  email = brian@hashvault.io
-[committer]
-  name = Brian Thompson
-  email = brian@hashvault.io
+  email = lt@hashvault.io
+  signingkey = 0x6895BD545C79E897
 [versionsort]
 [web]
   browser = /usr/bin/chromium

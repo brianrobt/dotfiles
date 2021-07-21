@@ -50,6 +50,8 @@ call plug#begin('~/.vim/plugged')
   " Comment keybinds.
   Plug 'tpope/vim-commentary'
 
+  " Kitty syntax highlighting
+  Plug 'fladson/vim-kitty'
 call plug#end()
 
 filetype plugin indent on

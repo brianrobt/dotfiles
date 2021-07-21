@@ -98,7 +98,7 @@
   patternType = extended
   threads = 4
 [gpg]
-  program = /usr/bin/gpg2
+  program = /usr/bin/gpg
   minTrustLevel = fully
 [gui]
   commitMsgWidth = 72

@@ -15,7 +15,7 @@
 #  fsmonitor = true
   eol = lf
   safecrlf = true
-  pager = less
+  pager = cat
   commitGraph = true
 [add]
   [interactive]

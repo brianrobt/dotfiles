@@ -82,7 +82,7 @@ if empty($TMUX) && empty($STY)
 endif
 
 colorscheme open-color
-
+set background=dark
 " Turn on line numbers.
 set number
 

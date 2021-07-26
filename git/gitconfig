@@ -182,7 +182,7 @@
 [user]
   name = Brian Thompson
   email = brian@hashvault.io
-  signingkey = E3F4C2F4B25752AB296DC7591CF5E07C6EF1AFD9
+  signingkey = 184FB1EFFD60DCAFE46F22B35E51E94E71B7E586
 [versionsort]
 [web]
   browser = /usr/bin/chromium

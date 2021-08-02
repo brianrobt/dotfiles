@@ -21,7 +21,7 @@ ln tmux/tmux.conf ~/.tmux.conf
 sudo apt install vim
 sh -c "vim/plug_install.sh"
 ln vim/vimrc ~/.vimrc
-vim -c "PlugInstall"
+vim -c "PlugInstall" &
 
 sudo apt install zsh fish
 sh -c "zsh/zsh_install.sh"

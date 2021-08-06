@@ -34,18 +34,18 @@ read -p "Would you like to install vim? (y/n) " | confirm_package
 sudo apt install vim -y
 sh -c "vim/plug_install.sh"
 ln vim/vimrc ~/.vimrc
-vim -c "PlugInstall" &
+vim -c "PlugInstall"
 
 read -p "Would you like to install other shells (zsh,fish)? (y/n) " | confirm_package
 sudo apt install zsh fish -y
 sh -c "zsh/zsh_install.sh"
 ln zsh/zshrc ~/.zshrc
 
-read -p "Would you like to add custom sources for apt? (y/n) " | confirm_package
-sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
-sudo ln debian/apt/sources.list /etc/apt/sources.list
-ln debian/config/kitty.conf ~/.config/kitty/kitty.conf
-sudo ln debian/usr/local/bin/findr.sh /usr/local/bin/findr
+#read -p "Would you like to add custom sources for apt? (y/n) " | confirm_package
+#sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
+#sudo ln debian/apt/sources.list /etc/apt/sources.list
+#ln debian/config/kitty.conf ~/.config/kitty/kitty.conf
+#sudo ln debian/usr/local/bin/findr.sh /usr/local/bin/findr
 
 read -p "Would you like to install nvm? (y/n) " | confirm_package
 sudo apt install curl -y

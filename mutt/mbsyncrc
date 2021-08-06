@@ -3,11 +3,11 @@ Expunge Both
 SyncState *
 
 IMAPAccount debian
-Host imap.gmail.com
-User brian@hashvault.io
-Pass "eoflbujkwwrcznof"
-SSLType IMAPS
-AuthMechs LOGIN
+Host 127.0.0.1
+Port 1143
+User se827@pm.me
+Pass "EIVyFTHQMQXXd9PmoEYtKQ"
+SSLType NONE
 
 #SSLType IMAPS
 #CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -23,25 +23,25 @@ Inbox ~/mail/debian/inbox
 Channel debian-default
 Master :debian-remote:
 Slave :debian-local:
-Patterns * ![Gmail]* 
+Patterns * ![Protonmail]* 
 Create Both
 SyncState *
 Sync All
 
-Channel debian-sent
-Master :debian-remote:"[Gmail]/Sent Mail"
-Slave :debian-local:sent
-Create Slave
-Sync Pull
+#Channel debian-sent
+#Master :debian-remote:"[Protonmail]/Sent"
+#Slave :debian-local:sent
+#Create Slave
+#Sync Pull
 
-Channel debian-trash
-Master :debian-remote:"[Gmail]/Trash"
-Slave :debian-local:trash
-Create Slave
-Sync Pull
+#Channel debian-trash
+#Master :debian-remote:"[Protonmail]/Trash"
+#Slave :debian-local:trash
+#Create Slave
+#Sync Pull
 
 # Get all the channels together into a group.
 Group debian
 Channel debian-default
-Channel debian-sent
-Channel debian-trash
+#Channel debian-sent
+#Channel debian-trash

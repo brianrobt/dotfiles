@@ -96,6 +96,7 @@ set backspace=indent,eol,start
 " Set textwidth to be 72 and visual ruler to be +1 from that.
 set textwidth=72
 set cc=+1
+"set colorcolumn=72
 
 " Use spaces instead of tabs.
 set tabstop=2

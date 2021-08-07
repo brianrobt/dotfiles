@@ -1,2 +1,2 @@
 #!/bin/sh
-find . -type f -name "*.md" | sort -R | head -n 1
+find $1 -type f -name "*."$2 | sort -R | head -n 1

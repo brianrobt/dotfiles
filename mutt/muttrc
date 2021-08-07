@@ -5,7 +5,7 @@
 # Source default account configuration
 
 #set realname = "Brian Thompson"
-set pgp_default_key = 840BA7B9920865342644236CBFF2C2F187A5D4A0
+set pgp_default_key = F5FA55A3DEBF7E5A2974A39F830D8D72EDCD867D
 
 # Imap settings
 #set imap_user = 'brian@hashvault.io'

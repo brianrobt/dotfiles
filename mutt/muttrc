@@ -43,7 +43,7 @@ set help = no
 set sleep_time = 0
 
 # Read top-down mail instead of bottom-up
-set sort = reverse-threads
+set sort = reverse-date
 
 # Simplify UI
 set status_format = "%f"
@@ -55,7 +55,8 @@ set alias_file = ~/.mutt/alias
 #source $alias_file
 
 # Import smtp and imap credentials
-source "gpg -dq ~/.mutt/protonmail.gpg |"
+source "gpg -dq ~/.mutt/gmail.gpg |"
+#source "gpg -dq ~/.mutt/protonmail.gpg |"
 
 # Remote gmail folders
 #set folder = "~/mail/debian"

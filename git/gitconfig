@@ -62,7 +62,7 @@
   status = auto
   tag = auto
 [commit]
-  gpgsign = false
+  gpgsign = true
 #  template = /home/briant/.git-config/gitmessage.txt
 [commitGraph]
 [credential]
@@ -183,8 +183,8 @@
 [url]
 [user]
   name = Brian Thompson
-  email = brian@hashvault.io
-  signingkey = F5FA55A3DEBF7E5A2974A39F830D8D72EDCD867D
+  email = git@brianrthompson.com
+  signingkey = FA182A98B4706018188B81645C9682007388E2EE
 [versionsort]
 [web]
   browser = /usr/bin/chromium

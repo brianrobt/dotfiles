@@ -62,7 +62,7 @@
   status = auto
   tag = auto
 [commit]
-  gpgsign = true
+  gpgsign = false
 #  template = /home/briant/.git-config/gitmessage.txt
 [commitGraph]
 [credential]
@@ -87,7 +87,7 @@
 [format]
   attach = true
   from = "Brian Thompson"
-  signatureFile = /home/briant/.mutt/signature
+#  signatureFile = /home/briant/.mutt/signature
 [filter]
 [fsck]
 [gc]
@@ -183,7 +183,7 @@
 [url]
 [user]
   name = Brian Thompson
-  email = git@brianrthompson.com
+  email = brt9023@gmail.com
   signingkey = FA182A98B4706018188B81645C9682007388E2EE
 [versionsort]
 [web]

@@ -69,6 +69,11 @@
   helper = store
 [credentialStore]
 [completion]
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
 [diff]
   context = 6
   guitool = kdiff3
@@ -128,6 +133,7 @@
 [instaweb]
   browser = /usr/bin/chromium
 [interactive]
+  diffFilter = delta --color-only
 [log]
   showSignature = true
 [lsrefs]
@@ -143,6 +149,10 @@
 [notes]
 [pack]
 [pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 [pretty]
 [protocol]
 [pull]

@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
- " Git support.
+  " Git support.
   Plug 'tpope/vim-fugitive'
 
   " A visual Git plugin to see what has changed in each file.
@@ -32,16 +32,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'tmux-plugins/vim-tmux'
 
   " Fuzzy file finder.
-  Plug 'junegunn/fzf', { 'do': { ->fzf#install() } } 
+  Plug 'junegunn/fzf', { 'do': { ->fzf#install() } }
 
   " Code completion.
-"  Plug 'ycm-core/youcompleteme'
+  "  Plug 'ycm-core/youcompleteme'
 
   " File tree navigator.
   "Plug 'scrooloose/nerdtree'
 
   " Syntax checking through external syntax checkers.
-"  Plug 'vim-syntastic/syntastic'
+  "  Plug 'vim-syntastic/syntastic'
 
   " Mappings to delete, change and add surrounding pairs (parens,
   " quotes, etc.)
@@ -54,6 +54,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'fladson/vim-kitty'
 
   Plug 'yous/vim-open-color'
+
+  " Common nvim LSP configuration
+  Plug 'neovim/nvim-lspconfig'
+
+  " Terraform language server
+  Plug 'juliosueiras/terraform-lsp'
+
+  " Dockerfile language server
+  Plug 'rcjsuen/dockerfile-language-server-nodejs'
+
+  " Go language server
+  Plug 'fatih/vim-go'
+
+  " Groovy language server
+  Plug 'GroovyLanguageServer/groovy-language-server'
 
 call plug#end()
 
@@ -116,7 +131,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o f
 " schemes work properly when Vim is used inside tmux or GNU.
 set t_ut=
 
-" vim-markdown settings.
+"""
+""" vim-markdown settings.
+"""
 
 " Disable folding.
 let g:vim_markdown_folding_disabled = 1
@@ -132,10 +149,19 @@ let g:vim_markdown_follow_anchor = 1
 " Do not automatically insert bullet points.
 let g:vim_markdown_auto_insert_bullets = 0
 
-" vim-gitgutter settings
+"""
+""" vim-gitgutter settings
+"""
 
 function GitStatus()
   let [a,m,r] = GitGutterGetHunkSummary()
   return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
+
+"""
+""" vim-go settings
+"""
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'

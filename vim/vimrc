@@ -55,8 +55,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'yous/vim-open-color'
 
-  " Common nvim LSP configuration
-  Plug 'neovim/nvim-lspconfig'
+  " Language server support
+  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-locakfile'}
 
   " Terraform language server
   Plug 'juliosueiras/terraform-lsp'
@@ -65,7 +65,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rcjsuen/dockerfile-language-server-nodejs'
 
   " Go language server
-  Plug 'fatih/vim-go'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Groovy language server
   Plug 'GroovyLanguageServer/groovy-language-server'
@@ -120,10 +120,6 @@ set expandtab
 set smarttab
 " set breakindent
 
-" Show whitespace chars.
-set list
-set listchars=eol:$,tab:>-,trail:~
-
 " Turn off automatic comment formatting.
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=t
 
@@ -165,3 +161,8 @@ set statusline+=%{GitStatus()}
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+
+"""
+""" Terraform lsp settings
+"""
+

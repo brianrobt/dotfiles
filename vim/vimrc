@@ -69,7 +69,6 @@ call plug#begin('~/.vim/plugged')
 
   " Groovy language server
   Plug 'GroovyLanguageServer/groovy-language-server'
-
 call plug#end()
 
 filetype plugin indent on
@@ -96,8 +95,12 @@ if empty($TMUX) && empty($STY)
   endif
 endif
 
-colorscheme open-color
-set background=dark
+" Set color scheme to monokai
+colorscheme monokai
+set t_Co=256
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
+
 " Turn on line numbers.
 set number
 

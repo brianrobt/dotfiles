@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'yous/vim-open-color'
 
   " Language server support
-  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-locakfile'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
   " Terraform language server
   Plug 'juliosueiras/terraform-lsp'
@@ -69,6 +69,8 @@ call plug#begin('~/.vim/plugged')
 
   " Groovy language server
   Plug 'GroovyLanguageServer/groovy-language-server'
+
+  Plug 'connorholyday/vim-snazzy'
 call plug#end()
 
 filetype plugin indent on
@@ -120,8 +122,10 @@ set cc=+1
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set smarttab
-" set breakindent
+set breakindent
+
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " Turn off automatic comment formatting.
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=t

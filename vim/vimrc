@@ -17,12 +17,6 @@ call plug#begin('~/.vim/plugged')
   " Colorful rainbow bracket matching.
   Plug 'luochen1990/rainbow'
 
-  " Monokai color scheme.
-  Plug 'crusoexia/vim-monokai'
-
-  " Collection of vim color schemes.
-  Plug 'rafi/awesome-vim-colorschemes'
-
   " A color scheme based on monokai.
   Plug 'tomasr/molokai'
 

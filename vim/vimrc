@@ -185,6 +185,12 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 """
-""" Terraform lsp settings
+""" vim-prettier settings
 """
 
+" Allow auto formatting for files without @format or @prettier tag
+let g:prettier#autoformat_require_pragma = 0
+
+" Run vim-prettier also after changing text or leaving insert mode
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync

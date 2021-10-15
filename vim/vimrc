@@ -1,3 +1,5 @@
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 
   " Git support.
@@ -71,6 +73,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'GroovyLanguageServer/groovy-language-server'
 
   Plug 'connorholyday/vim-snazzy'
+
+  Plug 'wadackel/vim-dogrun'
+
+  Plug 'NLKNguyen/papercolor-theme'
+
+  Plug 'sainnhe/sonokai'
+
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 filetype plugin indent on
@@ -97,11 +107,23 @@ if empty($TMUX) && empty($STY)
   endif
 endif
 
+if has('termguicolors')
+  set termguicolors
+endif
+
+let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
 " Set color scheme to monokai
-colorscheme monokai
+colorscheme sonokai
 set t_Co=256
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+
+let g:airline_theme = 'sonokai'
+let g:sonokai_transparent_background = 1
+let g:sonokai_diagnostic_text_highlight = 1
+let g:sonokai_diagnostic_line_highlight = 1
+let g:sonokai_diagnostic_virtual_text = 'colored'
 
 " Turn on line numbers.
 set number

@@ -2,9 +2,6 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-  " Git support.
-  Plug 'tpope/vim-fugitive'
-
   " A visual Git plugin to see what has changed in each file.
   Plug 'airblade/vim-gitgutter'
 
@@ -31,20 +28,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf', { 'do': { ->fzf#install() } }
 
   " Code completion.
-  "  Plug 'ycm-core/youcompleteme'
-
-  " File tree navigator.
-  "Plug 'scrooloose/nerdtree'
+"  Plug 'ycm-core/youcompleteme'
 
   " Syntax checking through external syntax checkers.
-  "  Plug 'vim-syntastic/syntastic'
-
-  " Mappings to delete, change and add surrounding pairs (parens,
-  " quotes, etc.)
-  Plug 'tpope/vim-surround'
-
-  " Comment keybinds.
-  Plug 'tpope/vim-commentary'
+  Plug 'vim-syntastic/syntastic'
 
   " Kitty syntax highlighting
   Plug 'fladson/vim-kitty'
@@ -52,13 +39,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'yous/vim-open-color'
 
   " Language server support
-  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
-
-  " Terraform language server
-  Plug 'juliosueiras/terraform-lsp'
-
-  " Dockerfile language server
-  Plug 'rcjsuen/dockerfile-language-server-nodejs'
+"  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
   " Go language server
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -100,6 +81,14 @@ if empty($TMUX) && empty($STY)
     endif
   endif
 endif
+
+"if executable('terraform-ls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'terraform-ls',
+"        \ 'cmd': {server_info->['terraform-ls', 'serve']},
+"        \ 'whitelist': ['terraform'],
+"        \ })
+"endif
 
 if has('termguicolors')
   set termguicolors
@@ -161,7 +150,7 @@ let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
 let g:vim_markdown_conceal_code_blocks = 0
 " Fix indentation.
-let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_new_list_item_indent = 2
 " Follow anchors.
 let g:vim_markdown_follow_anchor = 1
 " Do not automatically insert bullet points.

@@ -148,13 +148,21 @@ let g:vim_markdown_folding_disabled = 1
 " Disable concealing.
 let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
+let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 " Fix indentation.
-let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_new_list_item_indent = 0
 " Follow anchors.
 let g:vim_markdown_follow_anchor = 1
 " Do not automatically insert bullet points.
 let g:vim_markdown_auto_insert_bullets = 0
+" Fenced code block languages
+let g:vim_markdown_fenced_languages = ['sh=sh']
+" Syntax extensions
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+
 
 """
 """ vim-gitgutter settings

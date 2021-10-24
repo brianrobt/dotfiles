@@ -18,11 +18,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
 
   " Markdown plugin.
-  Plug 'godlygeek/tabular'
-  Plug 'plasticboy/vim-markdown'
+"  Plug 'godlygeek/tabular'
+"  Plug 'plasticboy/vim-markdown'
 
   " tmux plugin.
-  Plug 'tmux-plugins/vim-tmux'
+"  Plug 'tmux-plugins/vim-tmux'
 
   " Fuzzy file finder.
   Plug 'junegunn/fzf', { 'do': { ->fzf#install() } }
@@ -42,10 +42,10 @@ call plug#begin('~/.vim/plugged')
 "  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
   " Go language server
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Groovy language server
-  Plug 'GroovyLanguageServer/groovy-language-server'
+"  Plug 'GroovyLanguageServer/groovy-language-server'
 
   Plug 'connorholyday/vim-snazzy'
 
@@ -191,3 +191,21 @@ let g:prettier#autoformat_require_pragma = 0
 " Run vim-prettier also after changing text or leaving insert mode
 let g:prettier#quickfix_enabled = 0
 autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+
+" Turn of spell checking
+"set spell spelllang=en_us
+
+"""
+""" vim-syntastic settings
+"""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_markdown_checkers = ['proselint']

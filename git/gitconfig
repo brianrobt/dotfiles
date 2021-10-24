@@ -35,7 +35,7 @@
   [chromium]
 	cmd = /usr/bin/chromium
   [firefox]
-  	cmd = /usr/bin/firefox
+  	cmd = /usr/local/bin/firefox
 [checkout]
   defaultRemote = origin
   workers = 4
@@ -62,7 +62,7 @@
   status = auto
   tag = auto
 [commit]
-  gpgsign = false
+  gpgsign = true
 #  template = /home/briant/.git-config/gitmessage.txt
 [commitGraph]
 [credential]
@@ -112,8 +112,8 @@
   pruneDuringFetch = true
 [guitool]
 [help]
-  browser = /usr/bin/chromium
-  autoCorrect = 0
+  browser = /usr/local/bin/firefox
+  autoCorrect = 1
 [http]
   saveCookies = true
   sslVersion = tlsv1.3
@@ -131,7 +131,7 @@
 [init]
   defaultBranch = master
 [instaweb]
-  browser = /usr/bin/chromium
+  browser = /usr/local/bin/firefox
 [interactive]
   diffFilter = delta --color-only
 [log]
@@ -162,7 +162,7 @@
 [push]
   default = current
   followTags = true
-#  gpgSign = true
+  gpgSign = true
 [rebase]
   stat = true
   autoSquash = false
@@ -192,10 +192,10 @@
 [uploadpackfilter]
 [url]
 [user]
-  name = Brian Thompson
+  name = "Thompson, Brian"
   email = brt9023@gmail.com
-  signingkey = FA182A98B4706018188B81645C9682007388E2EE
+  signingkey = CE6675D71DCBD36C758C805C156C87695E33ACEF
 [versionsort]
 [web]
-  browser = /usr/bin/chromium
+  browser = /usr/local/bin/firefox
 [worktree]

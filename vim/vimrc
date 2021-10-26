@@ -56,6 +56,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'sainnhe/sonokai'
 
   Plug 'sheerun/vim-polyglot'
+
+  Plug 'panozzaj/vim-autocorrect'
 call plug#end()
 
 filetype plugin indent on
@@ -209,3 +211,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_markdown_checkers = ['proselint']
+
+"""
+""" spellcheck
+"""
+set spell spelllang=en_us
+source ~/.vim/plugged/vim-autocorrect/plugin/autocorrect.vim
+call AutoCorrect()

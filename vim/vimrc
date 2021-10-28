@@ -215,6 +215,8 @@ let g:syntastic_markdown_checkers = ['proselint']
 """
 """ spellcheck
 """
-set spell spelllang=en_us
-source ~/.vim/plugged/vim-autocorrect/plugin/autocorrect.vim
-call AutoCorrect()
+"augroup markdownSpell
+"  autocmd!
+"  autocmd FileType markdown setlocal spell spelllang=en_us
+"  autocmd BufRead,BufNewFile *.md setlocal spell
+"augroup END

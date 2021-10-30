@@ -1,201 +1,50 @@
-[advice]
-  fetchShowForcedUpdates = true
-  pushUpdateRejected = false
-  statusHints = true
-  commitBeforeMerge = true
-  resolveConflict = true
-  checkoutAmbiguousRemoteBranchName = true
-  rmHints = true
-  waitingForEditor = true
 [core]
   editor = vim
-  fileMode = true
   hideDotFiles = false
   ignoreCase = true
 #  fsmonitor = true
   eol = lf
   safecrlf = true
-  pager = cat
   commitGraph = true
-[add]
-  [interactive]
-    useBuiltin = true
-[alias]
-  last = cat-file commit HEAD
-  addall = add -A
-  cm = commit -m
-[am]
-[apply]
-[blame]
-  coloring = highlightRecent
-  showEmail = true
-  showRoot = true
-[branch]
-[browser]
-  [chromium]
-	cmd = /usr/bin/chromium
-  [firefox]
-  	cmd = /usr/local/bin/firefox
 [checkout]
   defaultRemote = origin
   workers = 4
-[clean]
-  requireForce = true
-[clone]
-[color]
-  advice = always
-  [advice]
-    hint = true
-  branch = always
-  diff = always
-  grep = always
-  interactive = always
-  push = always
-  remote = always
-  showBranch = always
-  status = always
-  transport = always
-  ui = always
-[column]
-  ui = auto
-  branch = auto
-  status = auto
-  tag = auto
 [commit]
   gpgsign = true
 #  template = /home/briant/.git-config/gitmessage.txt
-[commitGraph]
 [credential]
   helper = store
-[credentialStore]
-[completion]
-[delta]
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
-    navigate = true
-[diff]
-  context = 6
-  guitool = kdiff3
-  algorithm = histogram
-[difftool]
-  prompt = false
-[extensions]
-[fastimport]
-[feature]
-  experimental = true
 [fetch]
   prune = true
   pruneTags = true
   output = full
   parallel = 2
-[format]
-  attach = true
-  from = "Brian Thompson"
-#  signatureFile = /home/briant/.mutt/signature
-[filter]
-[fsck]
-[gc]
-[gitcvs]
-  enabled = false
-[gitweb]
-[grep]
-  lineNumber = true
-  column = true
-  patternType = extended
-  threads = 4
 [gpg]
   program = /usr/bin/gpg
   minTrustLevel = fully
 [gui]
   commitMsgWidth = 72
   pruneDuringFetch = true
-[guitool]
-[help]
-  browser = /usr/local/bin/firefox
-  autoCorrect = 1
-[http]
-  saveCookies = true
-  sslVersion = tlsv1.3
-  sslVerify = true
-  sslBackend = gnutls
-  followRedirects = true
-[i18n]
-[imap]
-#  folder =
-#  host =
-#  user =
-#  pass =
-#  port =
-[index]
 [init]
   defaultBranch = master
-[instaweb]
-  browser = /usr/local/bin/firefox
-[interactive]
-  diffFilter = delta --color-only
 [log]
   showSignature = true
-[lsrefs]
-[mailinfo]
-[mailmap]
-[maintenance]
-[man]
 [merge]
   ff = true
-  verifySignatures = true
   autoStash = true
   guitool = kdiff3
-[notes]
-[pack]
-[pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
-[pretty]
-[protocol]
 [pull]
   rebase = true
-  octopus = rebase
-  twohead = rebase
 [push]
   default = current
   followTags = true
-  gpgSign = true
 [rebase]
   stat = true
   autoSquash = false
   autoStash = true
-[receive]
-  advertisePushOptions = true
-[remote]
-[remotes]
-[repack]
-[rerere]
-[reset]
-  quiet = false
-[sendemail]
-[sequence]
-[showBranch]
-[splitIndex]
-[ssh]
-[status]
-[submodule]
 [tag]
   gpgSign = true
-[tar]
-[trace2]
-[transfer]
-[uploadarchive]
-[uploadpack]
-[uploadpackfilter]
-[url]
 [user]
   name = "Thompson, Brian"
   email = brt9023@gmail.com
-  signingkey = CE6675D71DCBD36C758C805C156C87695E33ACEF
-[versionsort]
-[web]
-  browser = /usr/local/bin/firefox
-[worktree]
+  signingkey = B70EF67D7E15DBA87294B0ED791EC2CED64463FD

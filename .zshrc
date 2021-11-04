@@ -15,7 +15,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="ys"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #source ~/.oh-my-zsh/custom/themes/zsh-theme/moarram.zsh-theme
 
 # Set list of themes to pick from when loading at random
@@ -78,7 +78,6 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-source ~/.zsh_plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #source ~/.zsh_plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
 
 plugins=(
@@ -102,11 +101,12 @@ plugins=(
 	terraform
 	tmux
 	vim-interaction
-  yarn
-	zsh-autosuggestions
-	zsh-completions
+	yarn
+#	zsh-autosuggestions
+#	zsh-completions
 )
 
+source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -145,23 +145,23 @@ export NVM_DIR="$HOME/.nvm"
 export DEBEMAIL="brt9023@gmail.com"
 export DEBFULLNAME="Brian Thompson"
 export PAGER="less"
-export PATH="/snap/bin:$PATH"
-export PATH="/home/$USER/Downloads/packages/flutter/bin:$PATH"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+#export PATH="/snap/bin:$PATH"
+#export PATH="/home/$USER/Downloads/packages/flutter/bin:$PATH"
+#export PATH="$PATH:/usr/local/go/bin"
+#export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$PATH:/home/$USER/workspace/dotfiles/scripts"
 export PATH="$PATH:/home/$USER/.local/bin"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export AWS_ACCESS_KEY_ID="AKIAVQQDFPQGDCL255EL"
 export AWS_SECRET_ACCESS_KEY="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"
-export GOPATH="/home/$USER/go"
-export GOROOT="/usr/local/go"
+#export GOPATH="/home/$USER/go"
+#export GOROOT="/usr/local/go"
 
-complete -o nospace -C /usr/bin/terraform terraform
+#complete -o nospace -C /usr/bin/terraform terraform
 
 source /home/$USER/.local/share/lscolors.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

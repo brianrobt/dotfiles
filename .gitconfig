@@ -10,7 +10,7 @@
   defaultRemote = origin
   workers = 4
 [commit]
-  gpgsign = true
+#  gpgsign = true
 #  template = /home/briant/.git-config/gitmessage.txt
 [credential]
   helper = store

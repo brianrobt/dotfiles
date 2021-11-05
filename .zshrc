@@ -151,6 +151,7 @@ export PAGER="less"
 #export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$PATH:/home/$USER/workspace/dotfiles/scripts"
 export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:/var/lib/snapd/snap/bin"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export AWS_ACCESS_KEY_ID="AKIAVQQDFPQGDCL255EL"

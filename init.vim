@@ -58,6 +58,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
 
   Plug 'panozzaj/vim-autocorrect'
+
+  Plug 'itchyny/lightline.vim'
 call plug#end()
 
 filetype plugin indent on

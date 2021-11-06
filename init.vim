@@ -226,6 +226,9 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
+" Show hidden files.
+let NERDTreeShowHidden=1
+
 """
 """ lightline.vim
 """

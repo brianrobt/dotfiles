@@ -156,8 +156,6 @@ export PATH="$PATH:/home/$USER/.local/bin"
 export PATH="$PATH:/var/lib/snapd/snap/bin"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export AWS_ACCESS_KEY_ID="AKIAVQQDFPQGDCL255EL"
-export AWS_SECRET_ACCESS_KEY="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"
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
 

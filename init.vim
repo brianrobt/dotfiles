@@ -5,9 +5,6 @@ call plug#begin('~/.vim/plugged')
   " A visual Git plugin to see what has changed in each file.
   Plug 'airblade/vim-gitgutter'
 
-  " Visual plugin to show things such as the Vim mode.
-  Plug 'vim-airline/vim-airline'
-
   " Prettier formatter.
   Plug 'prettier/vim-prettier', {'do': 'yarn install' }
 
@@ -114,7 +111,7 @@ set smartindent
 set backspace=indent,eol,start
 
 " Set textwidth to be 72 and visual ruler to be +1 from that.
-set textwidth=72
+set textwidth=80
 set cc=+1
 "set colorcolumn=72
 
@@ -214,3 +211,10 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
+
+"""
+""" lightline.vim
+"""
+let g:lightline = {
+      \ 'colorscheme': 'wombat'
+      \ }

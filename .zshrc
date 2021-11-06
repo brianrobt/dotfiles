@@ -90,6 +90,7 @@ plugins=(
 	gh
 	git-extras
 	git
+	golang
 	gpg-agent
 	man
 	nvm

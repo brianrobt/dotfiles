@@ -67,6 +67,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree-project-plugin'
 
   Plug 'tpope/vim-fugitive'
+
+  Plug 'neovim/nvim-lspconfig'
+
+  Plug 'hashicorp/terraform-ls'
+
+  Plug 'hrsh7th/nvim-cmp'
 call plug#end()
 
 filetype plugin indent on
@@ -130,6 +136,14 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o f
 " Disable Background Color Erase (BCE) indefinitely, so that color
 " schemes work properly when Vim is used inside tmux or GNU.
 set t_ut=
+
+"""
+""" Neovim LSP initializations.
+"""
+
+"require('lspconfig').gopls.setup{}
+"require('lspconfig').pylsp.setup{}
+"require('lspconfig').vimls.setup{}
 
 """
 """ vim-markdown settings.

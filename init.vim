@@ -60,31 +60,22 @@ call plug#begin('~/.vim/plugged')
   Plug 'panozzaj/vim-autocorrect'
 
   Plug 'itchyny/lightline.vim'
+
+  Plug 'preservim/nerdtree'
+
+  Plug 'xuyuanp/nerdtree-git-plugin'
+
+  Plug 'ryanoasis/vim-devicons'
+
+  Plug 'scrooloose/nerdtree-project-plugin'
+
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 filetype plugin indent on
 
 " Enable syntax highlighting.
 syntax on
-
-" Set up the open-color theme.
-" Use 24-bit (true-color) mode in Vim/Neovim when outside tmux or screen.
-" If you're using tmux version 2.2 or later, you can remove the outermost $TMUX
-" check and use tmux's 24-bit color support
-" (http://sunaku.github.io/tmux-24bit-color.html#usage for more information.)
-if empty($TMUX) && empty($STY)
-  " See https://gist.github.com/XVilka/8346728.
-  if $COLORTERM =~# 'truecolor' || $COLORTERM =~# '24bit'
-    if has('termguicolors')
-      " See :help xterm-true-color
-      if $TERM =~# '^screen'
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-      endif
-      set termguicolors
-    endif
-  endif
-endif
 
 "if executable('terraform-ls')
 "    au User lsp_setup call lsp#register_server({
@@ -94,17 +85,17 @@ endif
 "        \ })
 "endif
 
-if has('termguicolors')
-  set termguicolors
-endif
+"if has('termguicolors')
+"  set termguicolors
+"endif
 
 let g:sonokai_style = 'shusia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
-" Set color scheme to monokai
+" Set color scheme to sonokai
 colorscheme sonokai
-set t_Co=256
+"set t_Co=256
 
 let g:airline_theme = 'sonokai'
 let g:sonokai_transparent_background = 1
@@ -215,10 +206,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_markdown_checkers = ['proselint']
 
 """
-""" spellcheck
+""" NERDTree settings
 """
-"augroup markdownSpell
-"  autocmd!
-"  autocmd FileType markdown setlocal spell spelllang=en_us
-"  autocmd BufRead,BufNewFile *.md setlocal spell
-"augroup END
+
+" Map NERDTree find to ctrl+f
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree and leave the cursor in it.
+autocmd VimEnter * NERDTree

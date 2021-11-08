@@ -4,6 +4,10 @@
 ###
 # Source default account configuration
 
+# https://outlook.office365.com/EWS/Exchange.asmx
+# app id: 20460e5d-ce91-49af-a3a5-70b6be7486d1
+# tenant id: 8b9f1b4a-2a35-445d-837c-568a76f06a1a
+
 set realname = "Brian Thompson"
 #set pgp_default_key = FA182A98B4706018188B81645C9682007388E2EE
 

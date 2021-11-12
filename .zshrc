@@ -81,34 +81,21 @@ ZSH_THEME="ys"
 #source ~/.zsh_plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
 
 plugins=(
-	aws
 	debian
-	dnf
-	docker-compose
-	docker-machine
-	docker
 	gh
-	git-extras
 	git
-	golang
 	gpg-agent
 	man
 	nvm
-	pip
-	pyenv
-	pylint
-	python
 	sudo
 	systemd
-	terraform
-	tmux
 	vim-interaction
 	yarn
 	zsh-autosuggestions
 	zsh-completions
 )
 
-#source ~/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -139,10 +126,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --color=always -al"
 alias vim="nvim"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias dquilt="quilt --quiltrc=$HOME/.quiltrc-dpkg"
+complete -F _quilt_completion $_quilt_complete_opt dquilt
 
 export DEBEMAIL="brt9023@gmail.com"
 export DEBFULLNAME="Brian Thompson"
@@ -152,16 +137,15 @@ export PAGER="less"
 #export PATH="$PATH:/usr/local/go/bin"
 #export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$PATH:/home/$USER/workspace/dotfiles/scripts"
-export PATH="$PATH:/home/$USER/.local/bin"
-export PATH="$PATH:/var/lib/snapd/snap/bin"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
+export GPGKEY=5C7F5703D4DF4D62B56CAA87800C2483C2023763
 
 #complete -o nospace -C /usr/bin/terraform terraform
 
-source /home/$USER/.local/share/lscolors.sh
+#source /home/$USER/.local/share/lscolors.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -172,8 +156,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "/home/brian/.jabba/jabba.sh" ] && source "/home/brian/.jabba/jabba.sh"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-source "/home/brian/.sdkman/bin/sdkman-init.sh"
+# mc related
+if [ -f /usr/lib/mc/mc.sh ]; then
+	. /usr/lib/mc/mc.sh
+fi

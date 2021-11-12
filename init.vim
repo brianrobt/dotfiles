@@ -5,9 +5,6 @@ call plug#begin('~/.vim/plugged')
   " A visual Git plugin to see what has changed in each file.
   Plug 'airblade/vim-gitgutter'
 
-  " Prettier formatter.
-  Plug 'prettier/vim-prettier', {'do': 'yarn install' }
-
   " Colorful rainbow bracket matching.
   Plug 'luochen1990/rainbow'
 
@@ -24,6 +21,10 @@ call plug#begin('~/.vim/plugged')
   " Fuzzy file finder.
   Plug 'junegunn/fzf', { 'do': { ->fzf#install() } }
 
+  Plug 'ewilazarus/preto'
+
+  Plug 'phucngodev/mono'
+
   " Code completion.
 "  Plug 'ycm-core/youcompleteme'
 
@@ -34,9 +35,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'fladson/vim-kitty'
 
   Plug 'yous/vim-open-color'
-
-  " Language server support
-"  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
   " Go language server
 "  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -68,7 +66,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'tpope/vim-fugitive'
 
-  Plug 'neovim/nvim-lspconfig'
+"  Plug 'neovim/nvim-lspconfig'
 
   Plug 'hashicorp/terraform-ls'
 
@@ -96,8 +94,7 @@ let g:sonokai_style = 'shusia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
-" Set color scheme to sonokai
-colorscheme sonokai
+colorscheme mono
 "set t_Co=256
 
 let g:airline_theme = 'sonokai'
@@ -196,7 +193,8 @@ let g:prettier#autoformat_require_pragma = 0
 
 " Run vim-prettier also after changing text or leaving insert mode
 let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,
+  \ *.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
 
 " Turn of spell checking
 "set spell spelllang=en_us
@@ -224,10 +222,15 @@ let g:syntastic_markdown_checkers = ['proselint']
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree | wincmd p
 
 " Show hidden files.
 let NERDTreeShowHidden=1
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
+  \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 
 """
 """ lightline.vim

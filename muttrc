@@ -11,15 +11,15 @@
 set realname = "Brian Thompson"
 #set pgp_default_key = FA182A98B4706018188B81645C9682007388E2EE
 
-folder-hook 'imap_debian' 'source ~/.mutt/account_debian'
-folder-hook 'imap_main' 'source ~/.mutt/account_main'
-folder-hook 'imap_old_main' 'source ~/.mutt/account_old_main'
+#folder-hook 'imap_debian' 'source ~/.mutt/account_debian'
+#folder-hook 'imap_main' 'source ~/.mutt/account_main'
+#folder-hook 'imap_old_main' 'source ~/.mutt/account_old_main'
 
 source ~/.mutt/account_debian
 
-macro index qq '<sync-mailbox><enter-command>source ~/.mutt/imap_debian<enter><change-folder>!<enter>'
-macro index qw '<sync-mailbox><enter-command>source ~/.mutt/imap_main<enter><change-folder>!<enter>'
-macro index qe '<sync-mailbox><enter-command>source ~/.mutt/imap_old_main<enter><change-folder>!<enter>'
+#macro index qq '<sync-mailbox><enter-command>source ~/.mutt/imap_debian<enter><change-folder>!<enter>'
+#macro index qw '<sync-mailbox><enter-command>source ~/.mutt/imap_main<enter><change-folder>!<enter>'
+#macro index qe '<sync-mailbox><enter-command>source ~/.mutt/imap_old_main<enter><change-folder>!<enter>'
 
 
 # macros
@@ -29,7 +29,7 @@ macro index gi "<change-folder>$spoolfile<Enter>" "go to inbox"
 macro index gt "<change-folder>$trash<enter>" "go to trash""
 macro index,pager A "<save-message>=Archive<enter>" "Archive Message"
 macro index 1 "change-folder> =../debian/inbox/<enter>"
-macro index G "!mbsync -a^M" "Update through mbsync"
+#macro index G "!mbsync -a^M" "Update through mbsync"
 
 # Use mouse wheel
 bind pager <down> next-line
@@ -134,7 +134,7 @@ auto_view text/html                       # eg with links --dump
 #set ssl_force_tls = yes
 set abort_nosubject = yes
 set copy = no
-#set editor = "vim -S ~/.mutt/vimrc"
+set editor = "nvim"
 
 set pgp_sign_as = "Brian Thompson"
 set pgp_use_gpg_agent
@@ -149,7 +149,7 @@ set check_new
 set editor = vim
 set mail_check = 30
 set mh_purge
-set shell = "/usr/bin/fish"
+set shell = "/usr/bin/zsh"
 set timeout = 60
 
 # folder

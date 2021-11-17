@@ -97,8 +97,8 @@ let g:sonokai_style = 'shusia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
-colorscheme mono
-"set t_Co=256
+colorscheme sonokai
+set t_Co=256
 
 let g:airline_theme = 'sonokai'
 let g:sonokai_transparent_background = 1
@@ -200,7 +200,7 @@ autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,
   \ *.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
 
 " Turn of spell checking
-"set spell spelllang=en_us
+set spell spelllang=en_us
 
 """
 """ vim-syntastic settings

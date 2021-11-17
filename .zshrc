@@ -95,7 +95,7 @@ plugins=(
 	zsh-completions
 )
 
-source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 

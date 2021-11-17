@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'phucngodev/mono'
 
+  Plug 'prettier/prettier'
   " Code completion.
 "  Plug 'ycm-core/youcompleteme'
 
@@ -71,6 +72,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'hashicorp/terraform-ls'
 
   Plug 'hrsh7th/nvim-cmp'
+
+  Plug 'mzlogin/vim-markdown-toc'
 call plug#end()
 
 filetype plugin indent on

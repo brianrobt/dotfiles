@@ -125,7 +125,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --color=always -al"
-alias vim="nvim"
 alias dquilt="quilt --quiltrc=$HOME/.quiltrc-dpkg"
 complete -F _quilt_completion $_quilt_complete_opt dquilt
 

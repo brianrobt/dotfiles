@@ -43,7 +43,7 @@
   autoSquash = false
   autoStash = true
 [tag]
-  gpgSign = true
+#  gpgSign = true
 [user]
   name = "Thompson, Brian"
   email = brt9023@gmail.com

@@ -3,16 +3,16 @@ window:
 
 font:
   normal:
-    family: MesloLGS NF
+    family: Operator Mono for Powerline
     style: Regular
   bold:
-    family: MesloLGS NF
+    family: Operator Mono for Powerline
     style: Bold
   italic:
-    family: MesloLGS NF
+    family: Operator Mono for Powerline
     style: Italic
   bold_italic:
-    family: MesloLGS NF
+    family: Operator Mono for Powerline
     style: Bold Italic
 
 draw_bold_text_with_bright_colors: true
@@ -34,4 +34,4 @@ colors:
 live_config_reload: true
 
 shell:
-  program: /usr/bin/zsh
+  program: wsl.exe

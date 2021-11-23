@@ -10,5 +10,5 @@ deb-src http://debian.uchicago.edu/debian testing-proposed-updates main contrib 
 deb http://security.debian.org/debian-security/ testing-security main contrib non-free
 deb-src http://security.debian.org/debian-security/ testing-security main contrib non-free
 
-deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main
+#deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main
 # deb-src [arch=amd64] https://apt.releases.hashicorp.com bullseye main

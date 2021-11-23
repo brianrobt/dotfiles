@@ -86,17 +86,17 @@ plugins=(
 	git
 	gpg-agent
 	man
-	nvm
+#	nvm
 	sudo
 	systemd
 	vim-interaction
-	yarn
-	zsh-autosuggestions
-	zsh-completions
+#	yarn
+#	zsh-autosuggestions
+#	zsh-completions
 )
 
 #source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -125,7 +125,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="exa --color=always -al"
-alias dquilt="quilt --quiltrc=$HOME/.quiltrc-dpkg"
+#alias dquilt="quilt --quiltrc=$HOME/.quiltrc-dpkg"
 complete -F _quilt_completion $_quilt_complete_opt dquilt
 
 export DEBEMAIL="brt9023@gmail.com"
@@ -140,7 +140,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
-export GPGKEY=5C7F5703D4DF4D62B56CAA87800C2483C2023763
+export GPGKEY=A4F46CB4320061970B9299F799E8989E0ABC1690
 
 #complete -o nospace -C /usr/bin/terraform terraform
 
@@ -149,13 +149,13 @@ export GPGKEY=5C7F5703D4DF4D62B56CAA87800C2483C2023763
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s "/home/brian/.jabba/jabba.sh" ] && source "/home/brian/.jabba/jabba.sh"
+#[ -s "/home/brian/.jabba/jabba.sh" ] && source "/home/brian/.jabba/jabba.sh"
 
 # mc related
-if [ -f /usr/lib/mc/mc.sh ]; then
-	. /usr/lib/mc/mc.sh
-fi
+#if [ -f /usr/lib/mc/mc.sh ]; then
+#	. /usr/lib/mc/mc.sh
+#fi

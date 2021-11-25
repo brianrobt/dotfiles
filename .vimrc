@@ -12,8 +12,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
 
   " Markdown plugin.
-"  Plug 'godlygeek/tabular'
-"  Plug 'plasticboy/vim-markdown'
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
 
   " tmux plugin.
 "  Plug 'tmux-plugins/vim-tmux'
@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'itchyny/lightline.vim'
 
-"  Plug 'preservim/nerdtree'
+  Plug 'preservim/nerdtree'
 
   Plug 'xuyuanp/nerdtree-git-plugin'
 
@@ -197,7 +197,7 @@ autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,
   \ *.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
 
 " Turn of spell checking
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
 """
 """ vim-syntastic settings
@@ -219,16 +219,16 @@ let g:syntastic_markdown_checkers = ['proselint']
 """
 
 " Map NERDTree find to ctrl+f
-"nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
-"autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * NERDTree | wincmd p
 
 " Show hidden files.
-"let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
   \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 

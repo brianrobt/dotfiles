@@ -90,18 +90,8 @@ syntax on
 "  set termguicolors
 "endif
 
-let g:sonokai_style = 'shusia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-
-colorscheme sonokai
+colorscheme mono
 "set t_Co=256
-
-let g:airline_theme = 'sonokai'
-let g:sonokai_transparent_background = 1
-let g:sonokai_diagnostic_text_highlight = 1
-let g:sonokai_diagnostic_line_highlight = 1
-let g:sonokai_diagnostic_virtual_text = 'colored'
 
 " Turn on line numbers.
 set number
@@ -116,7 +106,6 @@ set backspace=indent,eol,start
 " Set textwidth to be 72 and visual ruler to be +1 from that.
 set textwidth=80
 set cc=+1
-"set colorcolumn=72
 
 " Use spaces instead of tabs.
 set tabstop=2
@@ -124,23 +113,9 @@ set shiftwidth=2
 set expandtab
 set breakindent
 
-set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-" Turn off automatic comment formatting.
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=t
-
 " Disable Background Color Erase (BCE) indefinitely, so that color
 " schemes work properly when Vim is used inside tmux or GNU.
 set t_ut=
-
-"""
-""" Neovim LSP initializations.
-"""
-
-"require('lspconfig').gopls.setup{}
-"require('lspconfig').pylsp.setup{}
-"require('lspconfig').vimls.setup{}
 
 """
 """ vim-markdown settings.
@@ -165,17 +140,6 @@ let g:vim_markdown_fenced_languages = ['sh=sh']
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
-
-
-"""
-""" vim-gitgutter settings
-"""
-
-function GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-set statusline+=%{GitStatus()}
 
 """
 """ vim-go settings

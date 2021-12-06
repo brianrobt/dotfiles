@@ -159,3 +159,4 @@ export NVM_DIR="$HOME/.nvm"
 #if [ -f /usr/lib/mc/mc.sh ]; then
 #	. /usr/lib/mc/mc.sh
 #fi
+export PRETTIER_PATH=$(which prettier)

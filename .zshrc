@@ -160,3 +160,4 @@ export NVM_DIR="$HOME/.nvm"
 #	. /usr/lib/mc/mc.sh
 #fi
 export PRETTIER_PATH=$(which prettier)
+export GPG_TTY=$(tty)

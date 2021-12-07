@@ -161,3 +161,5 @@ export NVM_DIR="$HOME/.nvm"
 #fi
 export PRETTIER_PATH=$(which prettier)
 export GPG_TTY=$(tty)
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+eval "$(ssh-agent -s)"

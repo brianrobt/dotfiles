@@ -15,7 +15,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="mira"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 #source ~/.oh-my-zsh/custom/themes/zsh-theme/moarram.zsh-theme
 
 # Set list of themes to pick from when loading at random
@@ -78,26 +78,29 @@ ZSH_THEME="mira"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#source ~/.zsh_plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
 
 plugins=(
-	debian
-	gh
-	git
-#	gpg-agent
-	man
-#	nvm
-	sudo
-	systemd
-	vim-interaction
-#	yarn
-#	zsh-autosuggestions
-#	zsh-completions
+  aws
+  colorize
+  debian
+  docker
+  git
+  gitignore
+  gnu-utils
+  history
+  man
+  node
+  npm
+  npx
+  nvm
+  pip
+  python
+  pylint
+  sudo
+  systemd
+  vim-interaction
+  zsh-autosuggestions
 )
-
-#source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-#autoload -U compinit && compinit
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -122,11 +125,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 alias ls="ls --color=always -al"
-#alias dquilt="quilt --quiltrc=$HOME/.quiltrc-dpkg"
-complete -F _quilt_completion $_quilt_complete_opt dquilt
 
 export DEBEMAIL="foss.systems@icloud.com"
 export DEBFULLNAME="Brian Thompson"
@@ -140,7 +140,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
-#export GPGKEY=A4F46CB4320061970B9299F799E8989E0ABC1690
+export GPGKEY=F0D1D538266493CEE48E89117C6D8B519CD1E93C
 
 #complete -o nospace -C /usr/bin/terraform terraform
 
@@ -161,5 +161,3 @@ export NVM_DIR="$HOME/.nvm"
 #fi
 export PRETTIER_PATH=$(which prettier)
 export GPG_TTY=$(tty)
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-eval "$(ssh-agent -s)"

@@ -90,7 +90,7 @@ syntax on
 "  set termguicolors
 "endif
 
-colorscheme mono
+colorscheme molokai
 "set t_Co=256
 
 " Turn on line numbers.

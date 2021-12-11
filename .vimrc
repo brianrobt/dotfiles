@@ -71,6 +71,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'hashicorp/terraform-ls'
 
   Plug 'hrsh7th/nvim-cmp'
+
+  Plug 'w0rp/ale'
+
+  Plug 'amperser/proselint'
+
+  Plug 'z0mbix/vim-shfmt'
 call plug#end()
 
 filetype plugin indent on
@@ -160,8 +166,10 @@ let g:prettier#quickfix_enabled = 0
 autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,
   \ *.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
 
-" Turn of spell checking
+" Turn on spell checking
 "set spell spelllang=en_us
+" Only spellcheck markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 """
 """ vim-syntastic settings
@@ -202,3 +210,14 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
 let g:lightline = {
       \ 'colorscheme': 'wombat'
       \ }
+
+""" ALE settings
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let g:ale_fixers = {
+  \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \   'markdown': ['prettier'],
+  \   'python': ['prettier'],
+  \   'bash': ['shfmt'],
+  \   'javascript': ['eslint', 'prettier'],
+  \}

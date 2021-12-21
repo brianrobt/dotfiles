@@ -77,6 +77,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'amperser/proselint'
 
   Plug 'z0mbix/vim-shfmt'
+
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 filetype plugin indent on
@@ -96,7 +98,7 @@ syntax on
 "  set termguicolors
 "endif
 
-colorscheme molokai
+colorscheme sonokai
 "set t_Co=256
 
 " Turn on line numbers.

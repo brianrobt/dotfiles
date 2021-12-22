@@ -56,7 +56,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'itchyny/lightline.vim'
 
-  Plug 'preservim/nerdtree'
+"  Plug 'preservim/nerdtree'
 
   Plug 'xuyuanp/nerdtree-git-plugin'
 
@@ -193,17 +193,17 @@ let g:syntastic_markdown_checkers = ['proselint']
 """
 
 " Map NERDTree find to ctrl+f
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 
 " Show hidden files.
-let NERDTreeShowHidden=1
+"let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
-  \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
+"  \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 
 """

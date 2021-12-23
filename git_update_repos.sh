@@ -1,19 +1,19 @@
 #!/bin/bash
 
-workspace="workspace"
+workspace="$HOME/workspace"
 
-for dir in "$HOME/$workspace"/*; do
+for dir in "$workspace"/*; do
   echo "Changing dirs to $dir"
   cd "$dir" || return
-  git fetch
-  git stash
-  branches=$(git branch -a)
-  for branch in $branches; do
-    if [ "$branch" = "master" ] || [ "$branch" = "main" ] || [ "$branch" = "trunk" ]; then
-      git checkout "$branch"
-      git merge upstream "$branch"
+  remotes=$(git remote)
+  for remote in $remotes; do
+    if [ "$remote" == "upstream" ]; then
+      branch=$(git branch --show-current)
+      git fetch
+      git merge upstream/"$branch"
+      echo "$dir: Done merging upstream"
       git push origin "$branch"
-      break
+      echo "$dir: Done updating origin"
     fi
   done
   cd ..

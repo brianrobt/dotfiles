@@ -46,5 +46,5 @@
   gpgSign = true
 [user]
   name = "Thompson, Brian"
-  email = brt9023@gmail.com
-  signingkey = 44A2010574961FA6D13528D6B3D38C62F33FAFDA
+  email = brian@amerixan.tech
+  signingkey = 76323BD9CF32A9D671E2E87390208C441C927578

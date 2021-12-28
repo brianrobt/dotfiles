@@ -79,28 +79,28 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(
-  aws
-  colorize
-  debian
-  docker
-  git
-  gitignore
-  gnu-utils
-  history
-  man
-  node
-  npm
-  npx
-  nvm
-  pip
-  python
-  pylint
-  sudo
-  systemd
-  vim-interaction
-  zsh-autosuggestions
-)
+#plugins=(
+#  aws
+#  colorize
+#  debian
+#  docker
+#  git
+#  gitignore
+#  gnu-utils
+#  history
+#  man
+#  node
+#  npm
+#  npx
+#  nvm
+#  pip
+#  python
+#  pylint
+#  sudo
+#  systemd
+#  vim-interaction
+#  zsh-autosuggestions
+#)
 
 # User configuration
 
@@ -128,7 +128,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 alias ls="ls --color=always -al"
 
-export DEBEMAIL="foss.systems@icloud.com"
+export DEBEMAIL="brian@amerixan.tech"
 export DEBFULLNAME="Brian Thompson"
 export PAGER="less"
 #export PATH="/snap/bin:$PATH"
@@ -140,7 +140,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
-export GPGKEY=F0D1D538266493CEE48E89117C6D8B519CD1E93C
+export GPGKEY=76323BD9CF32A9D671E2E87390208C441C927578
 
 #complete -o nospace -C /usr/bin/terraform terraform
 
@@ -159,5 +159,5 @@ export NVM_DIR="$HOME/.nvm"
 #if [ -f /usr/lib/mc/mc.sh ]; then
 #	. /usr/lib/mc/mc.sh
 #fi
-export PRETTIER_PATH=$(which prettier)
+#export PRETTIER_PATH=$(which prettier)
 export GPG_TTY=$(tty)

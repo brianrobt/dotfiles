@@ -8,119 +8,38 @@
 # app id: 20460e5d-ce91-49af-a3a5-70b6be7486d1
 # tenant id: 8b9f1b4a-2a35-445d-837c-568a76f06a1a
 
-set realname = "Brian Thompson"
-set pgp_default_key = 44A2010574961FA6D13528D6B3D38C62F33FAFDA
+source "~/.mutt/user"
 
-source ~/.mutt/business_account
+#set realname = "Brian Thompson"
+set pgp_default_key = 76323BD9CF32A9D671E2E87390208C441C927578
+set crypt_autosign="yes"
+set crypt_replysign="yes"
 
-# Use mouse wheel
-bind pager <down> next-line
-bind pager <up> previous-line
+set wrap=80
 
-# Don't add a '+' to urls that wrap
-unset markers
+source ~/.mutt/amerixan.tech
 
-# Don't ask to confirm deletions
-set delete
+set pager_stop="yes"
+set smart_wrap="yes"
+alternative_order text/plain
+auto_view text/html
+set reverse_name="yes"
+set reverse_realname="yes"
 
-# Don't move read mail to All Mail
-set move = no
+set editor="vim"
 
-# Don't show help bar
-set help = no
+set sort_alias=alias
+set reverse_alias="yes"
+set alias_file="~/.mutt/aliases"
+source "~/.mutt/aliases"
+source "~/.mutt/mailing_lists"
 
-# Don't wait to switch mailboxes
-set sleep_time = 0
+set sort="threads"
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+unset collapse_unread
+set duplicate_threads="no"
 
-# Read top-down mail instead of bottom-up
-set sort = reverse-date
-
-# Simplify UI
-set status_format = "%f"
-set date_format = "%m%d"
-set index_format = "%Z %D %-15.15n %s"
-
-### Identity
-set reverse_name
-
-### Pager
-ignore *
-unignore From Message-ID Date To Cc Bcc Subject
-set pager_stop
-# Prefer plain text to html + helps with dumb clients
-alternative_order multipart/mixed multipart/related text/plain
-# Consult mime.types for determining types of these attachments
-mime_lookup application/octet-stream
-
-### Other
-set indent_string = ">"
-set reflow_wrap = 80
-set reflow_text
-unset reflow_space_quotes
-
-#set imap_keepalive = 60
-unset imap_passive
-set imap_check_subscribed
-set mail_check = 15
-set timeout = 15
-
-set sidebar_visible = no
-set sidebar_width = 30
-
-#set ssl_starttls
-unset ssl_use_sslv3
-unset ssl_use_tlsv1
-set ssl_verify_dates
-set ssl_verify_host
-
-#set ssl_force_tls = yes
-set abort_nosubject = yes
-set copy = no
-
-set pgp_sign_as = "Brian Thompson"
-set pgp_use_gpg_agent
-set pgp_timeout=1800
-set crypt_autosign
-set crypt_replysign
-
-# system
-set check_new
-set editor = vim
-set mail_check = 30
-set mh_purge
-set shell = "/usr/bin/zsh"
-set timeout = 60
-
-# folder
-unset confirmappend
-unset confirmcreate
-set keep_flagged
-set save_address
-set save_name
-
-# index
-set mark_old
-
-# pager
-set smart_wrap
-
-# header
-#set from = "brian@hashvault.io"
-#set use_from
-
-# body
-set signature = "~/.mutt/signature"
-
-# compose
-set abort_nosubject
-set abort_unmodified
-set edit_hdrs
-set honor_followup_to
-set postpone
-
-# thread
-set duplicate_threads = no
-
-# remote
-set connect_timeout = 60
-set ascii_chars
+color quoted green default
+color signature cyan default
+color tree red default

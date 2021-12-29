@@ -79,28 +79,29 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-#plugins=(
-#  aws
-#  colorize
-#  debian
-#  docker
-#  git
-#  gitignore
-#  gnu-utils
-#  history
-#  man
-#  node
-#  npm
-#  npx
-#  nvm
-#  pip
-#  python
-#  pylint
-#  sudo
-#  systemd
-#  vim-interaction
-#  zsh-autosuggestions
-#)
+plugins=(
+  aws
+  colorize
+  debian
+  docker
+  gh
+  git
+  gitignore
+  gnu-utils
+  gpg-agent
+  history
+  man
+  node
+  npm
+  npx
+  nvm
+  pip
+  python
+  pylint
+  sudo
+  systemd
+  vim-interaction
+)
 
 # User configuration
 
@@ -140,14 +141,14 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export GOPATH="/home/$USER/go"
 #export GOROOT="/usr/local/go"
-export GPGKEY=76323BD9CF32A9D671E2E87390208C441C927578
+export GPGKEY=EBA87B03FA868AAAED1D16D6698868A82878C520
 
 #complete -o nospace -C /usr/bin/terraform terraform
 
 #source /home/$USER/.local/share/lscolors.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -161,3 +162,7 @@ export NVM_DIR="$HOME/.nvm"
 #fi
 #export PRETTIER_PATH=$(which prettier)
 export GPG_TTY=$(tty)
+
+source ~/.local/share/lscolors.sh
+#source "$HOME/.oh-my-zsh/custom/plugins/gh/github_completions.zsh"
+source "$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"

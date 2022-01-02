@@ -1,79 +1,19 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
-
-  " A visual Git plugin to see what has changed in each file.
-  Plug 'airblade/vim-gitgutter'
-
-  " Colorful rainbow bracket matching.
-  Plug 'luochen1990/rainbow'
-
-  " A color scheme based on monokai.
-  Plug 'tomasr/molokai'
-
-  " Markdown plugin.
-"  Plug 'godlygeek/tabular'
-"  Plug 'plasticboy/vim-markdown'
-
-  " tmux plugin.
-"  Plug 'tmux-plugins/vim-tmux'
-
-  " Fuzzy file finder.
-  Plug 'junegunn/fzf', { 'do': { ->fzf#install() } }
-
-  Plug 'ewilazarus/preto'
-
-  Plug 'phucngodev/mono'
-
-  Plug 'prettier/prettier'
-  " Code completion.
-"  Plug 'ycm-core/youcompleteme'
-
-  " Syntax checking through external syntax checkers.
-  Plug 'vim-syntastic/syntastic'
-
-  " Kitty syntax highlighting
-  Plug 'fladson/vim-kitty'
-
-  Plug 'yous/vim-open-color'
-
-  " Go language server
-"  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-  " Groovy language server
-"  Plug 'GroovyLanguageServer/groovy-language-server'
-
-  Plug 'connorholyday/vim-snazzy'
-
-  Plug 'wadackel/vim-dogrun'
-
-  Plug 'NLKNguyen/papercolor-theme'
-
   Plug 'sainnhe/sonokai'
-
-  Plug 'sheerun/vim-polyglot'
-
-  Plug 'panozzaj/vim-autocorrect'
-
-  Plug 'itchyny/lightline.vim'
-
   Plug 'preservim/nerdtree'
-
   Plug 'xuyuanp/nerdtree-git-plugin'
-
   Plug 'ryanoasis/vim-devicons'
-
-  Plug 'scrooloose/nerdtree-project-plugin'
-
-  Plug 'tpope/vim-fugitive'
-
-"  Plug 'neovim/nvim-lspconfig'
-
-  Plug 'hashicorp/terraform-ls'
-
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
-
-  Plug 'mzlogin/vim-markdown-toc'
+  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+  Plug 'glacambre/firenvim'
 call plug#end()
 
 filetype plugin indent on
@@ -89,22 +29,13 @@ syntax on
 "        \ })
 "endif
 
+
 "if has('termguicolors')
 "  set termguicolors
 "endif
 
-let g:sonokai_style = 'shusia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-
 colorscheme sonokai
-set t_Co=256
-
-let g:airline_theme = 'sonokai'
-let g:sonokai_transparent_background = 1
-let g:sonokai_diagnostic_text_highlight = 1
-let g:sonokai_diagnostic_line_highlight = 1
-let g:sonokai_diagnostic_virtual_text = 'colored'
+"set t_Co=256
 
 " Turn on line numbers.
 set number
@@ -119,7 +50,6 @@ set backspace=indent,eol,start
 " Set textwidth to be 72 and visual ruler to be +1 from that.
 set textwidth=80
 set cc=+1
-"set colorcolumn=72
 
 " Use spaces instead of tabs.
 set tabstop=2
@@ -127,95 +57,193 @@ set shiftwidth=2
 set expandtab
 set breakindent
 
-set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"""
+""" nvim-cmp settings
+"""
+set completeopt=menu,menuone,noselect
 
-" Turn off automatic comment formatting.
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=t
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
 
-" Disable Background Color Erase (BCE) indefinitely, so that color
-" schemes work properly when Vim is used inside tmux or GNU.
-set t_ut=
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'cmp_tabnine' },
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local tabnine = require('cmp_tabnine.config')
+  tabnine:setup({
+  	max_lines = 1000;
+  	max_num_results = 20;
+  	sort = true;
+  	run_on_every_keystroke = true;
+  	snippet_placeholder = '..';
+  	ignored_file_types = { -- default is not to ignore
+  		-- uncomment to ignore in lua:
+  		-- lua = true
+  	};
+  })
+EOF
 
 """
-""" Neovim LSP initializations.
+""" nvim-lspconfig setup
 """
 
-"require('lspconfig').gopls.setup{}
-"require('lspconfig').pylsp.setup{}
-"require('lspconfig').vimls.setup{}
+" Add pyright for python
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
 
-"""
-""" vim-markdown settings.
-"""
+lua << EOF
+require'lspconfig'.ansiblels.setup{}
+EOF
 
-" Disable folding.
-let g:vim_markdown_folding_disabled = 1
-" Disable concealing.
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal_code_blocks = 0
-" Fix indentation.
-let g:vim_markdown_new_list_item_indent = 0
-" Follow anchors.
-let g:vim_markdown_follow_anchor = 1
-" Do not automatically insert bullet points.
-let g:vim_markdown_auto_insert_bullets = 0
-" Fenced code block languages
-let g:vim_markdown_fenced_languages = ['sh=sh']
-" Syntax extensions
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_json_frontmatter = 1
+lua << EOF
+require'lspconfig'.bashls.setup{}
+EOF
 
+lua << EOF
+require'lspconfig'.clangd.setup{}
+EOF
 
-"""
-""" vim-gitgutter settings
-"""
+if executable('cmake-language-server')
+  au User lsp_setup call lsp#register_server({
+  \ 'name': 'cmake',
+  \ 'cmd': {server_info->['cmake-language-server']},
+  \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
+  \ 'whitelist': ['cmake'],
+  \ 'initialization_options': {
+  \   'buildDirectory': 'build',
+  \ }
+  \})
+endif
 
-function GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-set statusline+=%{GitStatus()}
+lua << EOF
+require'lspconfig'.cssls.setup{}
+EOF
 
-"""
-""" vim-go settings
-"""
+lua << EOF
+require'lspconfig'.dockerls.setup{}
+EOF
 
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
+lua << EOF
+require'lspconfig'.eslint.setup{}
+EOF
 
-"""
-""" vim-prettier settings
-"""
+lua << EOF
+require'lspconfig'.gopls.setup{}
+EOF
 
-" Allow auto formatting for files without @format or @prettier tag
-let g:prettier#autoformat_require_pragma = 0
+lua << EOF
+require'lspconfig'.groovyls.setup{
+  cmd = { "java", "-jar", "/home/brian/workspace/groovy-language-server/build/libs/groovy-language-server-all.jar"}
+}
+EOF
 
-" Run vim-prettier also after changing text or leaving insert mode
-let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,
-  \ *.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+lua << EOF
+require'lspconfig'.java_language_server.setup{
+  cmd = {"/usr/bin/bash", "/home/brian/workspace/java-language-server/dist/lang_server_linux.sh"}
+}
+EOF
 
-" Turn of spell checking
-set spell spelllang=en_us
+lua << EOF
+require'lspconfig'.jsonls.setup{}
+EOF
+lua << EOF
+require'lspconfig'.kotlin_language_server.setup{
+  cmd = {"/home/brian/workspace/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"}
+}
+EOF
 
-"""
-""" vim-syntastic settings
-"""
+lua << EOF
+require'lspconfig'.rls.setup{
+  settings = {
+    rust = {
+      unstable_features = true,
+      build_on_save = false,
+      all_features = true,
+    },
+  },
+}
+EOF
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+lua << EOF
+require'lspconfig'.rls.setup{}
+EOF
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+lua << EOF
+require'lspconfig'.solargraph.setup{}
+EOF
 
-let g:syntastic_markdown_checkers = ['proselint']
+lua << EOF
+require'lspconfig'.stylelint_lsp.setup{}
+EOF
+
+lua << EOF
+require'lspconfig'.terraformls.setup{}
+EOF
+
+lua << EOF
+require'lspconfig'.texlab.setup{}
+EOF
+
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+EOF
+
+lua << EOF
+require'lspconfig'.vimls.setup{}
+EOF
+
+lua << EOF
+require'lspconfig'.yamlls.setup{}
+EOF
 
 """
 """ NERDTree settings
@@ -234,10 +262,22 @@ let NERDTreeShowHidden=1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
   \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+"""
+""" Prettier settings
+"""
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
 
 """
-""" lightline.vim
+""" Misc
 """
-let g:lightline = {
-      \ 'colorscheme': 'wombat'
-      \ }
+
+" Trim trailing whitespace
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+
+autocmd BufWritePre * call TrimWhitespace()
+

@@ -93,7 +93,6 @@ plugins=(
   man
   node
   npm
-  npx
   nvm
   pip
   python
@@ -128,6 +127,7 @@ plugins=(
 # Example aliases
 source $ZSH/oh-my-zsh.sh
 alias ls="ls --color=always -al"
+alias vim="nvim"
 
 export DEBEMAIL="brian@amerixan.tech"
 export DEBFULLNAME="Brian Thompson"
@@ -139,10 +139,10 @@ export PAGER="less"
 #export PATH="$PATH:/home/$USER/workspace/dotfiles/scripts"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-#export GOPATH="/home/$USER/go"
-#export GOROOT="/usr/local/go"
+export GOPATH="$HOME/workspace/go"
+export GOROOT="/usr/local/go"
 export GPGKEY=EBA87B03FA868AAAED1D16D6698868A82878C520
-
+export RUBY_BIN="/home/brian/.local/share/gem/ruby/2.7.0/bin"
 #complete -o nospace -C /usr/bin/terraform terraform
 
 #source /home/$USER/.local/share/lscolors.sh
@@ -166,3 +166,8 @@ export GPG_TTY=$(tty)
 source ~/.local/share/lscolors.sh
 #source "$HOME/.oh-my-zsh/custom/plugins/gh/github_completions.zsh"
 source "$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+
+alias python="python3"
+
+export PATH=$PATH:/usr/local/go/bin:$RUBY_BIN
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

@@ -11,9 +11,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
-  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
   Plug 'glacambre/firenvim'
+  Plug 'codota/tabnine-vim'
+  Plug 'tzachar/cmp-tabnine'
 call plug#end()
 
 filetype plugin indent on

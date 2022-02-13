@@ -13,8 +13,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/nvim-cmp'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
   Plug 'glacambre/firenvim'
-  Plug 'codota/tabnine-vim'
-  Plug 'tzachar/cmp-tabnine'
 call plug#end()
 
 filetype plugin indent on
@@ -91,7 +89,6 @@ lua <<EOF
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
-      { name = 'cmp_tabnine' },
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -118,18 +115,6 @@ lua <<EOF
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  local tabnine = require('cmp_tabnine.config')
-  tabnine:setup({
-  	max_lines = 1000;
-  	max_num_results = 20;
-  	sort = true;
-  	run_on_every_keystroke = true;
-  	snippet_placeholder = '..';
-  	ignored_file_types = { -- default is not to ignore
-  		-- uncomment to ignore in lua:
-  		-- lua = true
-  	};
-  })
 EOF
 
 """

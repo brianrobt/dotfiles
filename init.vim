@@ -13,6 +13,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/nvim-cmp'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
   Plug 'glacambre/firenvim'
+  Plug 'godlygeek/tabular'
+  Plug 'preservim/vim-markdown'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 filetype plugin indent on
@@ -255,6 +258,17 @@ let g:prettier#autoformat_require_pragma = 0
 let g:prettier#autoformat_config_present = 1
 
 """
+""" Vim Markdown settings
+"""
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_auto_insert_bullets = 0
+
+"""
 """ Misc
 """
 
@@ -266,4 +280,5 @@ function! TrimWhitespace()
 endfunction
 
 autocmd BufWritePre * call TrimWhitespace()
+
 

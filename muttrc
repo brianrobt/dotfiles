@@ -1,45 +1,58 @@
 #####################
 ### muttrc
-### by Brian Thompson <brian@hashvault.io>
+### by Brian Thompson <brian@amerixan.tech>
 ###
-# Source default account configuration
 
-# https://outlook.office365.com/EWS/Exchange.asmx
-# app id: 20460e5d-ce91-49af-a3a5-70b6be7486d1
-# tenant id: 8b9f1b4a-2a35-445d-837c-568a76f06a1a
-
-source "~/.mutt/user"
-
-#set realname = "Brian Thompson"
-set pgp_default_key = 76323BD9CF32A9D671E2E87390208C441C927578
-set crypt_autosign="yes"
-set crypt_replysign="yes"
-
-set wrap=80
-
-source ~/.mutt/amerixan.tech
-
-set pager_stop="yes"
-set smart_wrap="yes"
-alternative_order text/plain
+source "gpg -dq ~/.mutt/protonmail.gpg |"
+set realname = "Brian Thompson"
+set pgp_default_key = "C170EA1D536182BAF9DE59CAA708A7C5770815AA"
+unset markers
+set delete = no
+set move = no
+set help = no
+set sleep_time = 0
+set sort = reverse-threads
+set status_format = "%f"
+set date_format = "%m-%d-%y"
+set index_format = "%Z %D %-15.15n %s"
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+set pager_stop
+alternative_order multipart/mixed multipart/related text/plain
+mime_lookup applications/octet-stream
+set mime_type_query_command = "xdg-mime query filetype"
+set reflow_wrap = 80
+set reflow_text
+unset reflow_space_quotes
+unset imap_passive
+set imap_check_subscribed
+set mail_check = 15
+set timeout = 15
+set sidebar_visible = no
+set sidebar_width = 30
+color sidebar_new brightred default
+unset ssl_use_sslv3
+unset ssl_use_tlsv1
+set ssl_verify_dates
+set ssl_verify_host
+push <show-version>
 auto_view text/html
-set reverse_name="yes"
-set reverse_realname="yes"
-
-set editor="vim"
-
-set sort_alias=alias
-set reverse_alias="yes"
-set alias_file="~/.mutt/aliases"
-source "~/.mutt/aliases"
-source "~/.mutt/mailing_lists"
-
-set sort="threads"
-set sort_browser="reverse-date"
-set sort_aux="last-date-received"
-unset collapse_unread
-set duplicate_threads="no"
-
-color quoted green default
-color signature cyan default
-color tree red default
+set copy = no
+set pgp_sign_as = "inkekwebelieve@protonmail.com"
+set pgp_use_gpg_agent
+set pgp_timeout = 1800
+set crypt_autosign
+set crypt_replysign
+set crypt_replysignencrypted
+set check_new
+set editor = nvim
+set mh_purge
+unset confirmappend
+unset confirmcreate
+set keep_flagged
+set save_address
+set save_name
+set mark_old
+set smart_wrap
+set signature = "~/.mutt/signature"
+set edit_hdrs

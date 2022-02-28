@@ -84,7 +84,7 @@ export NVM_DIR="$HOME/.nvm"
 #export PRETTIER_PATH=$(which prettier)
 export GPG_TTY=$(tty)
 
-source ~/.local/share/lscolors.sh
+#source ~/.local/share/lscolors.sh
 #source "$HOME/.oh-my-zsh/custom/plugins/gh/github_completions.zsh"
 #source "$HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 

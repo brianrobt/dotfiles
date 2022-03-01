@@ -3,7 +3,11 @@
 ### by Brian Thompson <brian@amerixan.tech>
 ###
 
-source "gpg -dq ~/.mutt/protonmail.gpg |"
+#source "gpg -dq ~/.mutt/protonmail.gpg |"
+source "gpg -dq ~/.mutt/gmail.gpg |"
+folder-hook "~/.mutt/gmail" "source ~/.mutt/gmail"
+#macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/protonmail<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/gmail<enter><change-folder>!<enter>'
 set realname = "Brian Thompson"
 set pgp_default_key = "C170EA1D536182BAF9DE59CAA708A7C5770815AA"
 unset markers

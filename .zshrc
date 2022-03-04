@@ -31,16 +31,12 @@ ZSH_THEME="ys"
 zstyle ':omz:update' mode auto      # update automatically without asking
 
 plugins=(
-  aws
   colorize
-  debian
-  docker
   gh
   git
   gitignore
   gnu-utils
   gpg-agent
-  history
   man
   node
   npm

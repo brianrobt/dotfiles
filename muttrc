@@ -3,6 +3,14 @@
 ### by Brian Thompson <brian@amerixan.tech>
 ###
 
+set abort_noattach = no
+set abort_nosubject = yes
+set abort_unmodified = yes
+# Don't interpret color codes
+set allow_ansi = no
+# Mutt will use plain ASCII chars when displaying thread and attachment trees
+set ascii_chars = yes
+set askcc = yes
 #source "gpg -dq ~/.mutt/protonmail.gpg |"
 source "gpg -dq ~/.mutt/gmail.gpg |"
 folder-hook "~/.mutt/gmail" "source ~/.mutt/gmail"

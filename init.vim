@@ -203,10 +203,6 @@ require'lspconfig'.rls.setup{
 EOF
 
 lua << EOF
-require'lspconfig'.rls.setup{}
-EOF
-
-lua << EOF
 require'lspconfig'.solargraph.setup{}
 EOF
 

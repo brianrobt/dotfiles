@@ -11,11 +11,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
   Plug 'glacambre/firenvim'
   Plug 'godlygeek/tabular'
   Plug 'preservim/vim-markdown'
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 filetype plugin indent on
@@ -246,12 +246,6 @@ let NERDTreeShowHidden=1
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
   \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-"""
-""" Prettier settings
-"""
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
 
 """
 """ Vim Markdown settings

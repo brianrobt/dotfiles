@@ -1,8 +1,7 @@
 [core]
-  editor = vim
+  editor = nvim
   hideDotFiles = false
   ignoreCase = true
-#  fsmonitor = true
   eol = lf
   safecrlf = true
   commitGraph = true
@@ -10,8 +9,7 @@
   defaultRemote = origin
   workers = 4
 [commit]
-#  gpgsign = true
-#  template = /home/briant/.git-config/gitmessage.txt
+  gpgsign = true
 [credential]
   helper = store
 [fetch]
@@ -24,27 +22,16 @@
   minTrustLevel = fully
 [gui]
   commitMsgWidth = 72
-  pruneDuringFetch = true
 [init]
   defaultBranch = master
 [log]
   showSignature = true
-[merge]
-  ff = true
-  autoStash = true
-  guitool = kdiff3
-[pull]
-  rebase = true
 [push]
   default = current
   followTags = true
-[rebase]
-  stat = true
-  autoSquash = false
-  autoStash = true
 [tag]
   gpgSign = true
 [user]
-  name = "Thompson, Brian"
-  email = brian@amerixan.tech
-  signingkey = C170EA1D536182BAF9DE59CAA708A7C5770815AA
+  name = Thompson, Brian
+  email = brt9023@gmail.com
+  signingkey = 9891C3B81BA4228DA30AA55974AC36EEBB6D858F

@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'xuyuanp/nerdtree-git-plugin'
   Plug 'ryanoasis/vim-devicons'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
@@ -121,114 +122,11 @@ lua <<EOF
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 EOF
 
-"""
-""" nvim-lspconfig setup
-"""
-
-" Add pyright for python
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.ansiblels.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.bashls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.clangd.setup{}
-EOF
-
-if executable('cmake-language-server')
-  au User lsp_setup call lsp#register_server({
-  \ 'name': 'cmake',
-  \ 'cmd': {server_info->['cmake-language-server']},
-  \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
-  \ 'whitelist': ['cmake'],
-  \ 'initialization_options': {
-  \   'buildDirectory': 'build',
-  \ }
-  \})
-endif
-
-lua << EOF
-require'lspconfig'.cssls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.dockerls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.eslint.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.gopls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.groovyls.setup{
-  cmd = { "java", "-jar", "/home/brian/workspace/groovy-language-server/build/libs/groovy-language-server-all.jar"}
-}
-EOF
-
-lua << EOF
-require'lspconfig'.java_language_server.setup{
-  cmd = {"/usr/bin/bash", "/home/brian/workspace/java-language-server/dist/lang_server_linux.sh"}
-}
-EOF
-
-lua << EOF
-require'lspconfig'.jsonls.setup{}
-EOF
-lua << EOF
-require'lspconfig'.kotlin_language_server.setup{
-  cmd = {"/home/brian/workspace/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"}
-}
-EOF
-
-lua << EOF
-require'lspconfig'.rls.setup{
-  settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save = false,
-      all_features = true,
-    },
-  },
-}
-EOF
-
-lua << EOF
-require'lspconfig'.solargraph.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.stylelint_lsp.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.terraformls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.texlab.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.tsserver.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.vimls.setup{}
-EOF
-
-lua << EOF
-require'lspconfig'.yamlls.setup{}
+lua <<EOF
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  server:setup{}
+end)
 EOF
 
 """

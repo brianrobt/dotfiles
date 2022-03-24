@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/vim-markdown'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
+  Plug 'meatballs/vim-xonsh'
 call plug#end()
 
 filetype plugin indent on

@@ -1,3 +1,12 @@
+zstyle ':znap:*' repos-dir ~/zsh-snap/plugins
+source ~/zsh-snap/znap.zsh
+
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+
+znap prompt sindresorhus/pure
+
 # User configuration
 alias ls="ls --color=always -al"
 alias vim="nvim"
@@ -16,3 +25,4 @@ export PATH="$PATH:/usr/local/go/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 bindkey "^[[3~" delete-char
+export SHELL=/usr/bin/zsh

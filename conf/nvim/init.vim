@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/vim-markdown'
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'meatballs/vim-xonsh'
+  Plug 'andreypopp/vim-colors-plain'
 call plug#end()
 
 filetype plugin indent on
@@ -38,8 +38,10 @@ syntax on
 "  set termguicolors
 "endif
 
+set termguicolors
+set background=dark
 colorscheme sonokai
-"set t_Co=256
+set t_Co=256
 
 " Turn on line numbers.
 set number
@@ -52,8 +54,7 @@ set smartindent
 set backspace=indent,eol,start
 
 " Set textwidth to be 72 and visual ruler to be +1 from that.
-set textwidth=80
-set cc=+1
+set cc=100
 
 " Use spaces instead of tabs.
 set tabstop=2
@@ -155,7 +156,7 @@ let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_auto_insert_bullets = 1
 
 """
 """ Misc

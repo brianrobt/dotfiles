@@ -2,9 +2,9 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
   Plug 'sainnhe/sonokai'
-  Plug 'preservim/nerdtree'
-  Plug 'xuyuanp/nerdtree-git-plugin'
-  Plug 'ryanoasis/vim-devicons'
+"  Plug 'preservim/nerdtree'
+"  Plug 'xuyuanp/nerdtree-git-plugin'
+"  Plug 'ryanoasis/vim-devicons'
   Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/nvim-lsp-installer'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -135,17 +135,17 @@ EOF
 """
 
 " Map NERDTree find to ctrl+f
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Start NERDTree and leave the cursor in it.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " Show hidden files.
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
-  \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 &&
+"  \ exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 """
 """ Vim Markdown settings
@@ -170,6 +170,3 @@ function! TrimWhitespace()
 endfunction
 
 autocmd BufWritePre * call TrimWhitespace()
-
-
-

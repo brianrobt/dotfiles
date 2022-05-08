@@ -27,3 +27,4 @@ export PATH="$PATH:/usr/local/go/bin"
 
 bindkey "^[[3~" delete-char
 export SHELL=/usr/bin/zsh
+export PATH="$PATH:/usr/local/android-studio/bin"

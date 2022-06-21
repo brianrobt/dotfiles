@@ -1,8 +1,4 @@
-set nocompatible
-
 filetype plugin indent on
-
-syntax on
 
 set termguicolors
 set background=dark
@@ -27,3 +23,14 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set breakindent
+
+call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'godlygeek/tabular'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'andreypopp/vim-colors-plain'
+  Plug 'sainnhe/sonokai'
+call plug#end()
+
+set background=dark
+colorscheme sonokai

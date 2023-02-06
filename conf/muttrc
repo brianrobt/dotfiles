@@ -1,7 +1,8 @@
+source "gpg -dq ~/.mutt/muttrc_protonmail.gpg |"
+
 # Get mutt up and running
 set ssl_force_tls = yes
 set send_charset = "us-ascii:utf-8"
-source ./muttrc_protonmail
 set folder = "imap://localhost:1143"
 set spoolfile = "imap://localhost:1143/INBOX"
 set postponed = "imap://localhost:1143/[Protonmail]/Drafts"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/zsh
 
 # First argument is the directory to search.
 # Second argument is the file extension to search for, where the

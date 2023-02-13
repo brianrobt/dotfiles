@@ -1,3 +1,4 @@
+set nocompatible
 filetype plugin indent on
 
 set termguicolors

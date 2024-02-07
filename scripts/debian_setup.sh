@@ -37,17 +37,12 @@ sudo apt install zsh -y
 sh -c "./zsh_install.sh"
 ln .zshrc ~/.zshrc
 
-#read -p "Would you like to add custom sources for apt? (y/n) " | confirm_package
-#sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
-#sudo ln debian/apt/sources.list /etc/apt/sources.list
-#ln debian/config/kitty.conf ~/.config/kitty/kitty.conf
-#sudo ln debian/usr/local/bin/findr.sh /usr/local/bin/findr
-
-echo "Installing nvm"
 echo "Installing curl"
 sudo apt install curl -y
+
+echo "Installing nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-echo "export NVM_DIR=\"$([ -z ${XDG_CONFIG_HOME-} ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\"" >> ~/.zshrc
+echo "export NVM_DIR=\"$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s \""${HOME}"/.nvm\" || printf %s \""${XDG_CONFIG_HOME}"/nvm\")\"" >> ~/.zshrc
 echo "[ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"" >> ~/.zshrc
 
 echo "Installing oh-my-zsh"

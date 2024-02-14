@@ -47,6 +47,7 @@ plugins=(
   colored-man-pages
   command-not-found
   debian
+  fzf
   gh
   git
   git-auto-fetch
@@ -55,7 +56,6 @@ plugins=(
   golang
   nvm
   pip
-  zsh-autocomplete
   zsh-autosuggestions
   zsh-interactive-cd
 )

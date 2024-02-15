@@ -69,11 +69,11 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # User aliases
-alias vim=lvim
+alias vim=nvim
 alias ls="exa -l"
 
 # User environment variables
-export EDITOR=lvim
+export EDITOR=nvim
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 export PATH="$PATH:/home/brian/.local/bin:/usr/local/go/bin"
 

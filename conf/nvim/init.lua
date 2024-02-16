@@ -27,6 +27,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.breakindent = true
 vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 ----
 -- Plugins

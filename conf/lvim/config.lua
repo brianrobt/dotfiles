@@ -9,6 +9,7 @@
 ----
 lvim.plugins = {
   { "tpope/vim-sleuth" },
+  { "tpope/vim-commentary" },
 }
 
 ----
@@ -19,6 +20,11 @@ vim.diagnostic.config({
   signs = true,
 })
 
+----
+-- Vim options
+----
+vim.opt.textwidth = 100
+
 -- Diagnostic messages will appear as a float
 vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor"})]])
 
@@ -26,25 +32,40 @@ vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor"})]])
 -- LVim builtins
 ----
 lvim.builtin.treesitter.highlight.enable = true
-
 lvim.builtin.treesitter.ensure_installed = {
-    "bash",
-    "c",
-    "css",
-    "java",
-    "javascript",
-    "json",
-    "latex",
-    "lua",
-    "python",
-    "rust",
-    "typescript",
-    "tsx",
-    "yaml",
+  "bash",
+  "c",
+  "css",
+  "java",
+  "javascript",
+  "json",
+  "latex",
+  "lua",
+  "python",
+  "rust",
+  "typescript",
+  "tsx",
+  "yaml",
 }
+
+----
+-- LVim options
+----
+lvim.format_on_save.enabled = true
+lvim.format_on_save.pattern = { "*.lua", "*.py", "*.md" }
 
 ----
 -- LSP servers
 ----
 require("lvim.lsp.manager").setup("marksman")
 require("lvim.lsp.manager").setup("lua_ls")
+require("lvim.lsp.manager").setup("texlab")
+require("lvim.lsp.manager").setup("ltex")
+
+----
+-- Linters
+----
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+
+}

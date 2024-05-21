@@ -25,12 +25,11 @@ source /usr/share/nvm/init-nvm.sh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Load custom dircolors
-source ~/workspace/LS_COLORS/lscolors.sh
+source /usr/share/LS_COLORS/dircolors.sh
 
 ###
 # Aliases
 ###
-alias vim=lvim
 alias ls="ls --color=auto"
 
 ###

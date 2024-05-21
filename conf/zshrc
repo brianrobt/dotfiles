@@ -31,6 +31,7 @@ source /usr/share/LS_COLORS/dircolors.sh
 # Aliases
 ###
 alias ls="ls --color=auto"
+alias vim=nvim
 
 ###
 # Key bindings

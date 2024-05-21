@@ -48,7 +48,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "sainnhe/sonokai"
+  "tpope/vim-commentary",
+  "tpope/vim-sleuth",
+  "jaredgorski/fogbell.vim",
+  "stefanvanburen/rams.vim",
+  "sainnhe/sonokai",
 })
 
 ----
@@ -62,4 +66,4 @@ vim.g.sonokai_better_performance = 1
 -- Commands
 ----
 
-vim.cmd("colorscheme sonokai")
+vim.cmd("colorscheme rams")

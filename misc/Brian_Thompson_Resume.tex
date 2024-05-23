@@ -1,0 +1,216 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Class
+% Version 2.0 (12/10/23)
+%
+% This class originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Omar Roldan
+% Based on a template by  Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{multicol}
+\setlength{\columnsep}{0mm}
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.5\textwidth} 
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	{ \fontsize{12}{14.4} \textcolor{black}{\textbf{\MakeUppercase{Brian Thompson}}}} % First name
+	\vspace{6pt}
+	{\Large Lead Software Engineer} % Career or current job title
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.2\textwidth} % 20% of the page width for the first row of icons
+    \vspace{-\baselineskip} % Required for vertically aligning minipages
+    % The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+    \icon{Phone}{11}{(636)426-0447}\\
+    \icon{MapMarker}{11}{St. Louis, MO}\\	
+\end{minipage}
+\begin{minipage}[t]{0.27\textwidth} % 27% of the page width for the second row of icons
+    \vspace{-\baselineskip} % Required for vertically aligning minipages
+    \icon{Envelope}{11}{\href{mailto:brianrobt@pm.me}{brianrobt@pm.me}}\\	
+    \icon{Github}{11}{\href{https://github.com/brianrobt}{github.com/brianrobt}}\\
+    \icon{LinkedinSquare}{11}{\href{https://www.linkedin.com/in/brian-r-thompson}{/in/brian-r-thompson}}\\    
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.46\textwidth}
+    \cvsect{Summary}
+    \vspace{-6pt} 
+\par  First and foremost, I value hard work, honesty, and grit. I love being in a team where I can contribute my expertise
+while simultaneously learning new things and growing my skillset. While I’m not honing my craft, I’m either with my
+wife and children, walking our dog, at the gym, or reading about history and philosophy.
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.465\textwidth}
+    \cvsect{Skills}
+    \vspace{-6pt}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Languages:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+      Python, Java, Groovy, Ruby, JavaScript, TypeScript, Bash, SQL  
+    \end{minipage}
+    \vspace{4mm}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Technologies:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+      AWS, Azure, Docker, Terraform, Jenkins, SaltStack, Gradle, Maven, Chef, Linux, Git, Tomcat, Apache, JBoss
+    \end{minipage} 
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vspace{-10 pt}
+\cvsect{Education}
+\begin{entrylist}
+    \entry
+		{2008-2014}
+		{Truman State University}
+		{}
+		{B.S. Computer Science}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\vspace{-10 pt}
+\cvsect{Experience}
+\begin{entrylist}
+	\entry
+	        {6/2022 -- 2/2024}
+		{Lead Site Reliability Engineer}
+		{Mastercard}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Configuration, maintenance, management, deployment, and high-availability uptime of over 100 Thales
+		  Luna HSMs, and 50+ supporting virtual machines.
+            \item Lead the design and implementation of the company-wide Luna HSM AWS Hybrid Cloud initiative.
+	    \item Mentored and supported junior team members every day.
+	    \item Developed and designed automation solutions, including writing Python packages, Jenkins pipelines, shell
+		  scripts, Chef cookbooks, and other custom tools from scratch.
+	    \item Wrote and maintained detailed technical documentation, including operational procedures, designs, and
+		  infrastructure lists.
+	    \item Managed and improved change processes for Luna HSMs and supporting infrastructure.
+	    \item Managed stakeholders interests while keeping the operational interests at heart.
+	    \item Developed Luna HSM operational design for a hybrid environment (on-prem HSMs and clients in AWS/Azure).
+	    \item Lead the migration of Azure VMs from CentOS 7 to RHEL 8 for my team.
+	    \item Collaborated with dozens of different stakeholders and individuals from other teams across the company
+		  on a daily basis.
+	    \item Increased procedural speed without sacrificing quality.
+	    \item Provided a solid, reliable, and streamlined customer experience.
+	    \item Improved production deployment and operational efficiencies for a widely used shared micro service.
+	    \item Wrote audit reports, and addressed gaps to meet audit requirements.
+	    \item Lead cloud operations for a widely used cryptography microservice.
+	    \item Performed application deployments and infrastructure management in Azure with Terraform.
+	\end{itemize}}
+	\entry
+		{10/2021 -- 4/2022}
+		{Cloud Data Engineer}
+		{Ameren}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Configured and automated AWS infrastructure using Terraform (including AWS RedShift, IAM, SSO,
+		  CloudFront, Lambda, S3, and RDS).
+            \item Developed and delivered multiple Databricks pipelines that transformed raw data into usable, formatted
+		  data that could then be used by the Data Scientists.
+	    \item Designed and implemented an AD-based security strategy so that the Data Scientists could use Databricks
+		  in a controlled manner.
+	\end{itemize}}
+	\entry
+		{11/2018 -- 10/2021}
+		{Senior DevOps Engineer}
+		{Mastercard}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Specialized in Application Release Automation (ARA).
+            \item Maintained custom SaltStack modules for deploying applications to various middleware components (e.g.,
+		  Apache, Tomcat, JBoss, WebSphere).
+	    \item Wrote extensive unit and integration tests.
+	    \item Worked with development teams to create and prioritize new features.
+	    \item Maintained supporting infrastructure with Chef Cookbooks.
+	    \item Built a new ARA framework from scratch with Chef Habitat.
+	    \item Migrated the existing ARA SaltStack solution to the new Chef Habitat framework.
+	    \item Wrote and maintained Jenkins pipelines, shared libraries, and job templates.
+	    \item Used Splunk to monitor infrastructure health and gather usage metrics of the various ARA modules.
+	\end{itemize}}
+	\entry
+		{3/2017 -- 11/2018}
+		{Software Engineer}
+		{Mastercard}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Built an application for bank customers that netted \$400m USD in the first year after release.
+            \item Worked on a suite of web applications that were directly used by customers in production.
+	    \item Wrote a UI in Angular (from Alpha release to 6.0).
+	    \item Collaborated on feature development and design.
+	    \item Wrote a transacations-based web service in Java.
+	    \item Spun up a Jenkins server for team’s immediate use before Jenkins was widespread across the corporation.
+	    \item Dedicated an RHEL VM internally exposed to the company since multiple teams demanded its usage.
+	    \item Managed LDAP roles and permissions.
+	    \item Created a Git branching strategy that the team still uses today.
+	\end{itemize}}
+	\entry
+		{7/2015 -- 3/2017}
+		{Associate Software Engineer}
+		{Mastercard}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
+            \item Ported an internal Java CLI tool to an AngularJS web app and a RESTful Java API.
+            \item Designed a GUI from wireframes to implementation.
+	    \item Used many AngularJS (1.x) modules to manage common tasks like routing, web services, and animations.
+	\end{itemize}}
+	\entry
+		{6/2012 -- 3/2015}
+		{Junior Software Engineer (Intern)}
+		{Tapestry Solutions}
+		{\vspace{-10pt}
+\par I was an intern at Tapestry Solutions in 2012, which changed to a part-time role while I was finishing up
+school. I stayed at the company until a few months after I graduated.
+\break
+\par While I was there, I worked with Hudson/Jenkins, Kettle (an ETL tool), AWS (EC2 and S3), Java, Bash,
+and Linux. My role was heavy with automating tasks that the more experienced team needed. The company
+had a requirement that you had to have at least 10 years of experience and be high-performing. I was the first
+intern there. It was a great learning experience working with engineers that were so much more experienced than
+myself, and helped jump-start my career significantly.}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES
+%----------------------------------------------------------------------------------------
+\vspace{-10 pt}
+	\cvsect{Languages}
+    \vspace{-6pt}
+    
+    \hspace{26mm} \textbf{English} - Native, \textbf{Spanish} - Intermediate
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

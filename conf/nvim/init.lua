@@ -12,22 +12,6 @@ Neovim configuration.
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
-----
--- Options
-----
-
-vim.opt.smarttab = true
-vim.opt.number = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.backspace = "indent,eol,start"
-vim.opt.cc = "80"
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.breakindent = true
-vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
 
 ----
 -- Plugins
@@ -56,11 +40,21 @@ require("lazy").setup({
 })
 
 ----
--- Globals
+-- Options
 ----
 
-vim.g.sonokai_style = 'atlantis'
-vim.g.sonokai_better_performance = 1
+vim.opt.smarttab = true
+vim.opt.number = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.backspace = "indent,eol,start"
+vim.opt.colorcolumn = "80"
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.breakindent = true
+vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 ----
 -- Commands

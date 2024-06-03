@@ -17,11 +17,14 @@ compinit
 source /usr/share/nvm/init-nvm.sh
 # Load custom dircolors
 source /usr/share/LS_COLORS/dircolors.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source ~/.zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 
 ###
 # Aliases
 ###
-alias ls="ls --color=auto"
+alias ls="eza -al --color=auto"
 alias vim=nvim
 
 ###

@@ -1,37 +1,55 @@
 [core]
-  editor = nvim
-  hideDotFiles = false
-  ignoreCase = true
-  eol = lf
-  safecrlf = true
-  commitGraph = true
+editor = vim
+hideDotFiles = false
+ignoreCase = true
+eol = lf
+safecrlf = true
+commitGraph = true
+
 [checkout]
-  defaultRemote = origin
-  workers = 4
+defaultRemote = origin
+workers = 4
+
 [commit]
-  gpgsign = true
+gpgsign = false
+
 [credential]
-  helper = store
+helper = store
+
+[credential "https://github.com"]
+helper =
+helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+helper =
+helper = !/usr/bin/gh auth git-credential
+
 [fetch]
-  prune = true
-  pruneTags = true
-  output = full
-  parallel = 2
+prune = true
+pruneTags = true
+output = full
+parallel = 2
+
 [gpg]
-  program = /usr/bin/gpg
-  minTrustLevel = fully
+program = /usr/bin/gpg
+minTrustLevel = fully
+
 [gui]
-  commitMsgWidth = 72
+commitMsgWidth = 72
+
 [init]
-  defaultBranch = master
+defaultBranch = master
+
 [log]
-  showSignature = true
+showSignature = true
+
 [push]
-  default = current
-  followTags = true
+default = current
+followTags = true
+
 [tag]
-  gpgSign = true
+gpgSign = false
+
 [user]
-  name = Thompson, Brian
-  email = brt9023@gmail.com
-  signingkey = 9891C3B81BA4228DA30AA55974AC36EEBB6D858F
+name = Thompson, Brian
+email = brianrobt@pm.me

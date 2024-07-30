@@ -28,7 +28,7 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"ansiblels",
-				"azure_pipelines_ls",
+				--				"azure_pipelines_ls",
 				"bashls",
 				"clangd",
 				"cssls",
@@ -52,7 +52,7 @@ return {
 				"taplo",
 				"terraformls",
 				"vimls",
-				"yamlls",
+				--				"yamlls",
 			},
 		})
 
@@ -64,6 +64,7 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
+				"yamllint",
 			},
 		})
 	end,

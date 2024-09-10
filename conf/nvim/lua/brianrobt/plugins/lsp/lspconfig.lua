@@ -170,50 +170,83 @@ return {
 					},
 				})
 			end,
-			["yamlls"] = function()
-				lspconfig["yamlls"].setup({
-					capabilities = capabilities,
-					--					root_dir = lspconfig.util.find_git_ancestor,
-					single_file_support = true,
-					settings = {
-						filetypes = {},
-						redhat = { telemetry = { enabled = false } },
-						yaml = {
-							schemaStore = {
-								enable = false,
-								url = "",
-							},
-							schemas = require("schemastore").yaml.schemas({
-								extra = {
-									{
-										description = "markdownlint schema",
-										fileMatch = ".markdownlint.y*l",
-										name = ".markdownlint.yml",
-										url = "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
-									},
-								},
-							}),
-							validate = { enable = true },
-							completion = { enable = true },
-							editor = {
-								tabSize = 2,
-							},
-						},
-					},
-				})
-			end,
-			["azure_pipelines_ls"] = function()
-				lspconfig["azure_pipelines_ls"].setup({
-					capabilities = capabilities,
-					root_dir = lspconfig.util.root_pattern("azure-pipelines*.y*l"),
-					single_file_support = true,
-					settings = {
-						yaml = {
-							format = { enable = true },
-						},
-					},
-				})
-			end,
+			-- ["yamlls"] = function()
+			-- 	lspconfig["yamlls"].setup({
+			--
+			-- 		capabilities = capabilities,
+			-- 		root_dir = lspconfig.util.find_git_ancestor,
+			-- 		single_file_support = true,
+			-- 		settings = {
+			-- 			filetypes = {},
+			-- 			redhat = { telemetry = { enabled = false } },
+			-- 			yaml = {
+			-- 				schemaStore = {
+			-- 					enable = false,
+			-- 					url = "",
+			-- 				},
+			-- 				schemas = require("schemastore").yaml.schemas({
+			-- 					replace = {
+			-- 						["Markdownlint"] = {
+			-- 							description = "Markdownlint overridden",
+			-- 							fileMatch = ".markdownlint.y*l",
+			-- 							name = "Markdownlint",
+			-- 							url = "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+			-- 						},
+			-- 						-- ["Azure Pipelines"] = {
+			-- 						-- 	description = "Azure Pipelines overridden",
+			-- 						-- 	fileMatch = {
+			-- 						-- 		"azure-pipeline*.y*l",
+			-- 						-- 		"tasks/*.y*l",
+			-- 						-- 		"jobs/*.y*l",
+			-- 						-- 		"stages/*.y*l",
+			-- 						-- 	},
+			-- 						-- 	name = "Azure Pipelines",
+			-- 						-- 	url = "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json",
+			-- 						-- },
+			-- 					},
+			-- 					ignore = {
+			-- 						"Azure Pipelines",
+			-- 						--	"Markdownlint",
+			-- 					},
+			-- 				}),
+			-- 				validate = { enable = true },
+			-- 				completion = { enable = true },
+			-- 				editor = {
+			-- 					tabSize = 2,
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
+			-- ["azure_pipelines_ls"] = function()
+			-- 	lspconfig["azure_pipelines_ls"].setup({
+			-- 		capabilities = capabilities,
+			-- 		root_dir = lspconfig.util.find_git_ancestor,
+			-- 		settings = {
+			-- 			yaml = {
+			-- 				schemaStore = {
+			-- 					enable = false,
+			-- 					url = "",
+			-- 				},
+			-- 				schemas = require("schemastore").yaml.schemas({
+			-- 					replace = {
+			-- 						["Azure Pipelines"] = {
+			-- 							description = "Azure Pipelines overridden",
+			-- 							fileMatch = {
+			-- 								"/azure-pipeline*.y*l",
+			-- 								"tasks/*.y*l",
+			-- 								"stages/*.y*l",
+			-- 								"jobs/*.y*l",
+			-- 							},
+			-- 							name = "Azure Pipelines",
+			-- 							url = "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json",
+			-- 						},
+			-- 					},
+			-- 				}),
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
 			["terraformls"] = function()
 				lspconfig["terraformls"].setup({
 					capabilities = capabilities,

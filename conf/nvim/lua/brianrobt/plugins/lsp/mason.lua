@@ -40,7 +40,6 @@ return {
 				"html",
 				"helm_ls",
 				"terraformls",
-				"tsserver",
 				"lua_ls",
 				"markdown_oxide",
 				"powershell_es",
@@ -64,6 +63,7 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
+				"markdownlint",
 			},
 		})
 	end,

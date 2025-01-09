@@ -1,4 +1,4 @@
-vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd "let g:netrw_liststyle = 3"
 
 local opt = vim.opt
 
@@ -18,8 +18,8 @@ opt.wrap = false
 -- Custom filetypes
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
-	pattern = ".yamlfmt",
-	command = "set filetype=yaml",
+  pattern = ".yamlfmt",
+  command = "set filetype=yaml",
 })
 
 -- vim.api.nvim_create_autocmd("BufWrite", {
@@ -41,7 +41,7 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start" -- allow backspace to indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard:append "unnamedplus" -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
